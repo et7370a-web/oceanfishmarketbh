@@ -84,7 +84,7 @@ const StorySection = () => {
             {milestones.map((item, index) => (
               <div
                 key={item.label}
-                className="bg-ocean-mid/30 rounded-2xl p-6 border border-ocean-surface/10"
+                className="bg-black/50 rounded-2xl p-6 border border-white/10 backdrop-blur-sm"
               >
                 <item.icon className="w-8 h-8 text-white mx-auto mb-3" />
                 <div className="text-3xl font-display font-bold text-white mb-1">
