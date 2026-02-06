@@ -27,7 +27,12 @@ import halibutSteaksImg from '@/assets/fish-halibut-steaks.jpg';
 import tilefishImg from '@/assets/fish-tilefish.jpg';
 import tilefishWholeImg from '@/assets/fish-tilefish-whole.jpg';
 import whitingImg from '@/assets/fish-whiting.jpg';
+import whitingButterflyImg from '@/assets/fish-whiting-butterfly.jpg';
+import whitingHeadoffImg from '@/assets/fish-whiting-headoff.jpg';
+import whitingWholeImg from '@/assets/fish-whiting-whole.jpg';
 import mulletImg from '@/assets/fish-mullet.jpg';
+import mulletSteaksImg from '@/assets/fish-mullet-steaks.jpg';
+import mulletWholeImg from '@/assets/fish-mullet-whole.jpg';
 import buffaloImg from '@/assets/fish-buffalo.jpg';
 import carpImg from '@/assets/fish-carp.jpg';
 
@@ -123,14 +128,14 @@ const products = [
   { id: 25, name: 'Tile Fish Whole', origin: 'USA', price: 16.99, weight: '5lbs', type: 'Whole Fish', rating: 5, image: tilefishWholeImg },
   
   // Whiting
-  { id: 26, name: 'Whiting Butterfly Fillet', origin: 'USA', price: 14.99, weight: '5lb', type: 'Butterfly Fillet', rating: 5, image: whitingImg },
-  { id: 27, name: 'Whiting Head Off', origin: 'USA', price: 12.99, weight: '5lb', type: 'Head Off Clean', rating: 5, image: whitingImg },
-  { id: 28, name: 'Whiting Whole', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: whitingImg },
+  { id: 26, name: 'Whiting Butterfly Fillet', origin: 'USA', price: 14.99, weight: '5lb', type: 'Butterfly Fillet', rating: 5, image: whitingButterflyImg },
+  { id: 27, name: 'Whiting Head Off', origin: 'USA', price: 12.99, weight: '5lb', type: 'Head Off Clean', rating: 5, image: whitingHeadoffImg },
+  { id: 28, name: 'Whiting Whole', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: whitingWholeImg },
   
   // Mullet
   { id: 29, name: 'Mullet Fillet', origin: 'USA', price: 19.99, weight: '5lb', type: 'Fillet', rating: 5, image: mulletImg },
-  { id: 30, name: 'Mullet Steaks', origin: 'USA', price: 12.99, weight: '5lb', type: 'Steaks', rating: 5, image: mulletImg },
-  { id: 31, name: 'Mullet Whole', origin: 'USA', price: 11.99, weight: '5lbs', type: 'Whole Fish', rating: 5, image: mulletImg },
+  { id: 30, name: 'Mullet Steaks', origin: 'USA', price: 12.99, weight: '5lb', type: 'Steaks', rating: 5, image: mulletSteaksImg },
+  { id: 31, name: 'Mullet Whole', origin: 'USA', price: 11.99, weight: '5lbs', type: 'Whole Fish', rating: 5, image: mulletWholeImg },
   
   // Buffalo
   { id: 32, name: 'Buffalo Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lb', type: 'Fillet', rating: 5, image: buffaloImg },
