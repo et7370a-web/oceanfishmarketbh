@@ -11,6 +11,25 @@ import wholeImg from '@/assets/fish-whole.jpg';
 import filletImg from '@/assets/fish-fillet.jpg';
 import steaksImg from '@/assets/fish-steaks.jpg';
 import butterflyImg from '@/assets/fish-butterfly.jpg';
+import branzinoImg from '@/assets/fish-branzino.jpg';
+import grouperImg from '@/assets/fish-grouper.jpg';
+
+// Country flag emoji mapping
+const getCountryFlag = (origin: string): string => {
+  const flagMap: Record<string, string> = {
+    'Alaska': '🇺🇸',
+    'USA': '🇺🇸',
+    'Norway': '🇳🇴',
+    'Pacific Ocean': '🌊',
+    'Vietnam/Thailand': '🇻🇳',
+    'Arctic Ocean': '❄️',
+    'Antarctica': '🇦🇶',
+    'Greece': '🇬🇷',
+    'Turkey': '🇹🇷',
+    'Mississippi River': '🇺🇸',
+  };
+  return flagMap[origin] || '🌍';
+};
 
 const products = [
   // Salmon
@@ -39,16 +58,16 @@ const products = [
   { id: 13, name: 'Chilean Sea Bass Whole', origin: 'Antarctica', price: 29.99, weight: '15lb', type: 'Whole Fish w/o Head', rating: 5, image: wholeImg },
   
   // Branzino
-  { id: 14, name: 'Branzino Fillet', origin: 'Greece', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: filletImg },
-  { id: 15, name: 'Branzino Fillet', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Fillet', rating: 4, image: filletImg },
+  { id: 14, name: 'Branzino Fillet', origin: 'Greece', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: branzinoImg },
+  { id: 15, name: 'Branzino Fillet', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Fillet', rating: 4, image: branzinoImg },
   { id: 16, name: 'Branzino Butterfly', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Butterfly', rating: 4, image: butterflyImg },
-  { id: 17, name: 'Branzino Whole', origin: 'Greece', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: wholeImg },
-  { id: 18, name: 'Branzino Whole', origin: 'Turkey', price: 15.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: wholeImg },
+  { id: 17, name: 'Branzino Whole', origin: 'Greece', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: branzinoImg },
+  { id: 18, name: 'Branzino Whole', origin: 'Turkey', price: 15.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: branzinoImg },
   
   // Grouper
-  { id: 19, name: 'Grouper Fillet', origin: 'USA', price: 28.99, weight: '5lb', type: 'Fillet', rating: 5, image: filletImg },
-  { id: 20, name: 'Grouper Steaks', origin: 'USA', price: 26.99, weight: '5lb', type: 'Steaks', rating: 5, image: steaksImg },
-  { id: 21, name: 'Grouper Whole', origin: 'USA', price: 22.99, weight: '5-8lb', type: 'Whole Fish', rating: 4, image: wholeImg },
+  { id: 19, name: 'Grouper Fillet', origin: 'USA', price: 28.99, weight: '5lb', type: 'Fillet', rating: 5, image: grouperImg },
+  { id: 20, name: 'Grouper Steaks', origin: 'USA', price: 26.99, weight: '5lb', type: 'Steaks', rating: 5, image: grouperImg },
+  { id: 21, name: 'Grouper Whole', origin: 'USA', price: 22.99, weight: '5-8lb', type: 'Whole Fish', rating: 4, image: grouperImg },
   
   // Flounder
   { id: 22, name: 'Flounder Fillet', origin: 'USA', price: 22.99, weight: '5lb', type: 'Fillet', rating: 5, image: filletImg },
@@ -139,9 +158,12 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
           <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
             {product.name}
           </h3>
-          <p className="text-sm text-muted-foreground mb-3">
-            {product.origin}
-          </p>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg">{getCountryFlag(product.origin)}</span>
+            <p className="text-sm text-muted-foreground">
+              {product.origin}
+            </p>
+          </div>
 
           {/* Price */}
           <div className="flex flex-col gap-1">
