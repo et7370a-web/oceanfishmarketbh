@@ -140,12 +140,17 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
           </p>
 
           {/* Price */}
-          <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-primary">
-              ${product.price.toFixed(2)}
-            </span>
-            <span className="text-sm text-muted-foreground">
-              / {product.weight}
+          <div className="flex flex-col gap-1">
+            <div className="flex items-baseline gap-2">
+              <span className="text-2xl font-bold text-primary">
+                ${product.price.toFixed(2)}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                / lb
+              </span>
+            </div>
+            <span className="text-xs text-muted-foreground">
+              {product.weight} minimum order
             </span>
           </div>
         </div>
