@@ -38,9 +38,9 @@ const StorySection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="text-ocean-surface">From Mountain Stream to</span>
+            <span className="text-ocean-surface">Our story begins where the finest</span>
             <br />
-            <span className="text-gold-light italic">Metropolitan Table</span>
+            <span className="text-gold-light italic">stories often do—outdoors, with a rod and reel.</span>
           </motion.h2>
 
           <motion.p
@@ -50,10 +50,7 @@ const StorySection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Our story starts where the best stories often do: outside, with a rod and reel. 
-            Founder Slavik first learned the meaning of quality and patience while fly-fishing 
-            for rainbow trout with his grandfather near his childhood mountain home. That simple 
-            passion for the perfect catch quickly evolved into a dedicated profession.
+            Founder Slavik was first introduced to the principles of patience, precision, and quality while fly-fishing for rainbow trout alongside his grandfather near his childhood mountain home. What started as a simple pursuit of the perfect catch evolved into a lifelong dedication to excellence—one rooted in respect for craft, sourcing, and time-honored standards.
           </motion.p>
 
           <motion.p
@@ -63,9 +60,17 @@ const StorySection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Today, we're proud owners of three thriving retail locations and continue to operate 
-            a large-scale wholesale operation, ensuring our expertise spans the entire supply chain. 
-            For us, quality isn't just a goal—it's the only standard.
+            Today, we are proud to operate three thriving retail locations alongside a large-scale wholesale operation, giving us rare, hands-on command of the entire supply chain. This end-to-end expertise allows us to maintain uncompromising standards at every stage, from origin to offering.
+          </motion.p>
+
+          <motion.p
+            className="text-lg text-ocean-surface/70 mb-12 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            For us, quality is not a benchmark to meet, it is the foundation of everything we do.
           </motion.p>
 
           {/* Milestones */}
