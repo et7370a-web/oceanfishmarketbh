@@ -149,6 +149,11 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
               {product.badge}
             </span>
           )}
+
+          {/* Country Flag */}
+          <div className="absolute bottom-3 right-3 bg-card/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-lg">
+            <span className="text-xl">{getCountryFlag(product.origin)}</span>
+          </div>
         </div>
 
         {/* Content */}
