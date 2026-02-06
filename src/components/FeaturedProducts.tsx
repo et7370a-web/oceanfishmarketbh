@@ -177,6 +177,9 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
             <p className="text-sm text-muted-foreground">
               {product.origin}
             </p>
+            {(product.origin === 'USA' || product.origin === 'Alaska' || product.origin === 'Mississippi River') && (
+              <span className="text-lg ml-auto">🇺🇸</span>
+            )}
           </div>
 
           {/* Price */}
