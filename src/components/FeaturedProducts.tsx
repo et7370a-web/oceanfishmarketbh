@@ -9,72 +9,72 @@ import codImg from '@/assets/fish-cod.jpg';
 import seabassImg from '@/assets/fish-seabass.jpg';
 
 const products = [
-  {
-    id: 1,
-    name: 'King Salmon Fillet',
-    origin: 'Alaska',
-    price: 36.99,
-    weight: '5lbs',
-    type: 'Sushi Grade',
-    rating: 5,
-    image: salmonImg,
-    badge: 'Best Seller',
-    badgeColor: 'bg-accent',
-  },
-  {
-    id: 2,
-    name: 'Tuna Fillet Fresh',
-    origin: 'Pacific Ocean',
-    price: 24.99,
-    weight: '5lbs',
-    type: 'Sushi Grade',
-    rating: 5,
-    image: tunaImg,
-    badge: 'Premium',
-    badgeColor: 'bg-secondary',
-  },
-  {
-    id: 3,
-    name: 'Halibut Fillet',
-    origin: 'Arctic Ocean',
-    price: 36.99,
-    weight: '5lbs',
-    type: 'Fillet',
-    rating: 5,
-    image: halibutImg,
-  },
-  {
-    id: 4,
-    name: 'Red Snapper Fillet',
-    origin: 'USA',
-    price: 23.99,
-    weight: '5lb',
-    type: 'Fillet',
-    rating: 5,
-    image: snapperImg,
-  },
-  {
-    id: 5,
-    name: 'COD Fillet',
-    origin: 'Alaska',
-    price: 19.99,
-    weight: '5lbs',
-    type: 'Fillet',
-    rating: 4,
-    image: codImg,
-  },
-  {
-    id: 6,
-    name: 'Chilean Sea Bass',
-    origin: 'Antarctica',
-    price: 32.99,
-    weight: '5lb',
-    type: 'Cut by Pound',
-    rating: 5,
-    image: seabassImg,
-    badge: 'Chef Favorite',
-    badgeColor: 'bg-primary',
-  },
+  // Salmon
+  { id: 1, name: 'King Salmon Fillet', origin: 'Alaska', price: 36.99, weight: '5lbs', type: 'Fillet Sushi Grade', rating: 5, image: salmonImg, badge: 'Best Seller', badgeColor: 'bg-accent' },
+  { id: 2, name: 'Salmon Fillet', origin: 'Norway', price: 29.99, weight: '5lb', type: 'Fillet Sushi Grade', rating: 5, image: salmonImg },
+  { id: 3, name: 'Salmon Steaks', origin: 'Norway', price: 22.99, weight: '5lb', type: 'Steaks', rating: 4, image: salmonImg },
+  { id: 4, name: 'Salmon Whole Fish', origin: 'Norway', price: 18.99, weight: '15lbs', type: 'Whole Fish', rating: 4, image: salmonImg },
+  
+  // Tuna
+  { id: 5, name: 'Tuna Fillet Fresh', origin: 'Pacific Ocean', price: 24.99, weight: '5lbs', type: 'Sushi Grade', rating: 5, image: tunaImg, badge: 'Premium', badgeColor: 'bg-secondary' },
+  { id: 6, name: 'Tuna Steaks', origin: 'Vietnam/Thailand', price: 18.99, weight: '5lb', type: 'Steaks Frozen', rating: 4, image: tunaImg },
+  
+  // Halibut
+  { id: 7, name: 'Halibut Fillet', origin: 'Arctic Ocean', price: 36.99, weight: '5lbs', type: 'Fillet', rating: 5, image: halibutImg },
+  { id: 8, name: 'Halibut Steaks', origin: 'Arctic Ocean', price: 29.99, weight: '5lb', type: 'Steaks', rating: 5, image: halibutImg },
+  
+  // Red Snapper
+  { id: 9, name: 'Red Snapper Fillet', origin: 'USA', price: 23.99, weight: '5lb', type: 'Fillet', rating: 5, image: snapperImg },
+  { id: 10, name: 'Red Snapper Whole', origin: 'USA', price: 16.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: snapperImg },
+  
+  // COD
+  { id: 11, name: 'COD Fillet', origin: 'Alaska', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 4, image: codImg },
+  
+  // Chilean Sea Bass
+  { id: 12, name: 'Chilean Sea Bass', origin: 'Antarctica', price: 32.99, weight: '5lb', type: 'Cut by Pound', rating: 5, image: seabassImg, badge: 'Chef Favorite', badgeColor: 'bg-primary' },
+  { id: 13, name: 'Chilean Sea Bass Whole', origin: 'Antarctica', price: 29.99, weight: '15lb', type: 'Whole Fish w/o Head', rating: 5, image: seabassImg },
+  
+  // Branzino
+  { id: 14, name: 'Branzino Fillet', origin: 'Greece', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: seabassImg },
+  { id: 15, name: 'Branzino Fillet', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Fillet', rating: 4, image: seabassImg },
+  { id: 16, name: 'Branzino Butterfly', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Butterfly', rating: 4, image: seabassImg },
+  { id: 17, name: 'Branzino Whole', origin: 'Greece', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: seabassImg },
+  { id: 18, name: 'Branzino Whole', origin: 'Turkey', price: 15.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: seabassImg },
+  
+  // Grouper
+  { id: 19, name: 'Grouper Fillet', origin: 'USA', price: 28.99, weight: '5lb', type: 'Fillet', rating: 5, image: snapperImg },
+  { id: 20, name: 'Grouper Steaks', origin: 'USA', price: 26.99, weight: '5lb', type: 'Steaks', rating: 5, image: snapperImg },
+  { id: 21, name: 'Grouper Whole', origin: 'USA', price: 22.99, weight: '5-8lb', type: 'Whole Fish', rating: 4, image: snapperImg },
+  
+  // Flounder
+  { id: 22, name: 'Flounder Fillet', origin: 'USA', price: 22.99, weight: '5lb', type: 'Fillet', rating: 5, image: halibutImg },
+  { id: 23, name: 'Flounder Whole', origin: 'USA', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: halibutImg },
+  
+  // Tile Fish
+  { id: 24, name: 'Tile Fish Fillet', origin: 'USA', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 4, image: codImg },
+  { id: 25, name: 'Tile Fish Whole', origin: 'USA', price: 16.99, weight: '5lbs', type: 'Whole Fish', rating: 4, image: codImg },
+  
+  // Whiting
+  { id: 26, name: 'Whiting Butterfly Fillet', origin: 'USA', price: 14.99, weight: '5lb', type: 'Butterfly Fillet', rating: 4, image: codImg },
+  { id: 27, name: 'Whiting Head Off', origin: 'USA', price: 12.99, weight: '5lb', type: 'Head Off Clean', rating: 4, image: codImg },
+  { id: 28, name: 'Whiting Whole', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 4, image: codImg },
+  
+  // Mullet
+  { id: 29, name: 'Mullet Fillet', origin: 'USA', price: 19.99, weight: '5lb', type: 'Fillet', rating: 4, image: snapperImg },
+  { id: 30, name: 'Mullet Steaks', origin: 'USA', price: 12.99, weight: '5lb', type: 'Steaks', rating: 4, image: snapperImg },
+  { id: 31, name: 'Mullet Whole', origin: 'USA', price: 11.99, weight: '5lbs', type: 'Whole Fish', rating: 4, image: snapperImg },
+  
+  // Buffalo
+  { id: 32, name: 'Buffalo Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lb', type: 'Fillet', rating: 4, image: codImg },
+  { id: 33, name: 'Buffalo Steaks', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Circle Cuts', rating: 4, image: codImg },
+  { id: 34, name: 'Buffalo Half Moon', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Half Moon Cuts', rating: 4, image: codImg },
+  { id: 35, name: 'Buffalo Whole', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 4, image: codImg },
+  
+  // Carp
+  { id: 36, name: 'Carp Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 4, image: codImg },
+  { id: 37, name: 'Carp Steaks', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Circle Cuts', rating: 4, image: codImg },
+  { id: 38, name: 'Carp Half Moon', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Half Moon Cuts', rating: 4, image: codImg },
+  { id: 39, name: 'Carp Whole', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 4, image: codImg },
 ];
 
 const ProductCard = ({ product, index }: { product: typeof products[0]; index: number }) => {
