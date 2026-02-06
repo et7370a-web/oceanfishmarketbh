@@ -36,11 +36,11 @@ const Header = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-display text-2xl font-bold text-primary tracking-tight">
+              <span className="font-display text-2xl font-bold text-primary tracking-tight">
                   OCEAN
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground -mt-1">
-                  Fish Market
+                  Fish BH
                 </span>
               </div>
             </motion.a>

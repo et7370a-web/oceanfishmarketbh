@@ -47,11 +47,11 @@ const Footer = () => {
             >
               <Fish className="w-10 h-10 text-gold-light" />
               <div className="flex flex-col">
-                <span className="font-display text-2xl font-bold text-ocean-surface tracking-tight">
+              <span className="font-display text-2xl font-bold text-ocean-surface tracking-tight">
                   OCEAN
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.3em] text-ocean-surface/60 -mt-1">
-                  Fish Market
+                  Fish BH
                 </span>
               </div>
             </motion.a>
@@ -138,7 +138,7 @@ const Footer = () => {
         <div className="border-t border-ocean-mid/30 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-ocean-surface/60 text-sm">
-              © 2024 Ocean Fish Market. All rights reserved.
+              © 2024 Ocean Fish BH. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-ocean-surface/60">
               <a href="#" className="hover:text-ocean-surface transition-colors">
