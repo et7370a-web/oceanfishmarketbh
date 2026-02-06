@@ -11,10 +11,11 @@ import seabassImg from '@/assets/fish-seabass.jpg';
 const products = [
   {
     id: 1,
-    name: 'King Salmon',
+    name: 'King Salmon Fillet',
     origin: 'Alaska',
     price: 36.99,
-    pricePerLb: 36.99,
+    weight: '5lbs',
+    type: 'Sushi Grade',
     rating: 5,
     image: salmonImg,
     badge: 'Best Seller',
@@ -22,10 +23,11 @@ const products = [
   },
   {
     id: 2,
-    name: 'Bluefin Tuna',
+    name: 'Tuna Fillet Fresh',
     origin: 'Pacific Ocean',
-    price: 48.99,
-    pricePerLb: 48.99,
+    price: 24.99,
+    weight: '5lbs',
+    type: 'Sushi Grade',
     rating: 5,
     image: tunaImg,
     badge: 'Premium',
@@ -33,37 +35,41 @@ const products = [
   },
   {
     id: 3,
-    name: 'Atlantic Halibut',
-    origin: 'Norway',
-    price: 32.99,
-    pricePerLb: 32.99,
-    rating: 4,
+    name: 'Halibut Fillet',
+    origin: 'Arctic Ocean',
+    price: 36.99,
+    weight: '5lbs',
+    type: 'Fillet',
+    rating: 5,
     image: halibutImg,
   },
   {
     id: 4,
-    name: 'Red Snapper',
-    origin: 'Gulf of Mexico',
-    price: 28.99,
-    pricePerLb: 28.99,
+    name: 'Red Snapper Fillet',
+    origin: 'USA',
+    price: 23.99,
+    weight: '5lb',
+    type: 'Fillet',
     rating: 5,
     image: snapperImg,
   },
   {
     id: 5,
-    name: 'Atlantic Cod',
-    origin: 'Iceland',
-    price: 24.99,
-    pricePerLb: 24.99,
+    name: 'COD Fillet',
+    origin: 'Alaska',
+    price: 19.99,
+    weight: '5lbs',
+    type: 'Fillet',
     rating: 4,
     image: codImg,
   },
   {
     id: 6,
     name: 'Chilean Sea Bass',
-    origin: 'South Pacific',
-    price: 42.99,
-    pricePerLb: 42.99,
+    origin: 'Antarctica',
+    price: 32.99,
+    weight: '5lb',
+    type: 'Cut by Pound',
     rating: 5,
     image: seabassImg,
     badge: 'Chef Favorite',
@@ -139,7 +145,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
               ${product.price.toFixed(2)}
             </span>
             <span className="text-sm text-muted-foreground">
-              / ${product.pricePerLb.toFixed(2)} per lb
+              / {product.weight}
             </span>
           </div>
         </div>
