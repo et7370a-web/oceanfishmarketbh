@@ -19,6 +19,8 @@ import branzinoImg from '@/assets/fish-branzino.jpg';
 import branzinoFilletImg from '@/assets/fish-branzino-fillet.jpg';
 import branzinoWholeImg from '@/assets/fish-branzino-whole.jpg';
 import grouperImg from '@/assets/fish-grouper.jpg';
+import grouperSteaksImg from '@/assets/fish-grouper-steaks.jpg';
+import grouperWholeImg from '@/assets/fish-grouper-whole.jpg';
 import flounderImg from '@/assets/fish-flounder.jpg';
 import halibutSteaksImg from '@/assets/fish-halibut-steaks.jpg';
 import tilefishImg from '@/assets/fish-tilefish.jpg';
@@ -107,8 +109,8 @@ const products = [
   
   // Grouper
   { id: 19, name: 'Grouper Fillet', origin: 'USA', price: 28.99, weight: '5lb', type: 'Fillet', rating: 5, image: grouperImg },
-  { id: 20, name: 'Grouper Steaks', origin: 'USA', price: 26.99, weight: '5lb', type: 'Steaks', rating: 5, image: grouperImg },
-  { id: 21, name: 'Grouper Whole', origin: 'USA', price: 22.99, weight: '5-8lb', type: 'Whole Fish', rating: 5, image: grouperImg },
+  { id: 20, name: 'Grouper Steaks', origin: 'USA', price: 26.99, weight: '5lb', type: 'Steaks', rating: 5, image: grouperSteaksImg },
+  { id: 21, name: 'Grouper Whole', origin: 'USA', price: 22.99, weight: '5-8lb', type: 'Whole Fish', rating: 5, image: grouperWholeImg },
   
   // Flounder
   { id: 22, name: 'Flounder Fillet', origin: 'USA', price: 22.99, weight: '5lb', type: 'Fillet', rating: 5, image: flounderImg },
