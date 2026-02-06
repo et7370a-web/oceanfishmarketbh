@@ -34,7 +34,15 @@ import mulletImg from '@/assets/fish-mullet.jpg';
 import mulletSteaksImg from '@/assets/fish-mullet-steaks.jpg';
 import mulletWholeImg from '@/assets/fish-mullet-whole.jpg';
 import buffaloImg from '@/assets/fish-buffalo.jpg';
+import buffaloFilletImg from '@/assets/fish-buffalo-fillet.jpg';
+import buffaloSteaksImg from '@/assets/fish-buffalo-steaks.jpg';
+import buffaloHalfmoonImg from '@/assets/fish-buffalo-halfmoon.jpg';
+import buffaloWholeImg from '@/assets/fish-buffalo-whole.jpg';
 import carpImg from '@/assets/fish-carp.jpg';
+import carpFilletImg from '@/assets/fish-carp-fillet.jpg';
+import carpSteaksImg from '@/assets/fish-carp-steaks.jpg';
+import carpHalfmoonImg from '@/assets/fish-carp-halfmoon.jpg';
+import carpWholeImg from '@/assets/fish-carp-whole.jpg';
 
 // Flag images
 import usaFlagImg from '@/assets/flag-usa.png';
@@ -138,16 +146,16 @@ const products = [
   { id: 31, name: 'Mullet Whole', origin: 'USA', price: 11.99, weight: '5lbs', type: 'Whole Fish', rating: 5, image: mulletWholeImg },
   
   // Buffalo
-  { id: 32, name: 'Buffalo Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lb', type: 'Fillet', rating: 5, image: buffaloImg },
-  { id: 33, name: 'Buffalo Steaks', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Circle Cuts', rating: 5, image: buffaloImg },
-  { id: 34, name: 'Buffalo Half Moon', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Half Moon Cuts', rating: 5, image: buffaloImg },
-  { id: 35, name: 'Buffalo Whole', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 5, image: buffaloImg },
+  { id: 32, name: 'Buffalo Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lb', type: 'Fillet', rating: 5, image: buffaloFilletImg },
+  { id: 33, name: 'Buffalo Steaks', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Circle Cuts', rating: 5, image: buffaloSteaksImg },
+  { id: 34, name: 'Buffalo Half Moon', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Half Moon Cuts', rating: 5, image: buffaloHalfmoonImg },
+  { id: 35, name: 'Buffalo Whole', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 5, image: buffaloWholeImg },
   
   // Carp
-  { id: 36, name: 'Carp Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 5, image: carpImg },
-  { id: 37, name: 'Carp Steaks', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Circle Cuts', rating: 5, image: carpImg },
-  { id: 38, name: 'Carp Half Moon', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Half Moon Cuts', rating: 5, image: carpImg },
-  { id: 39, name: 'Carp Whole', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 5, image: carpImg },
+  { id: 36, name: 'Carp Fillet', origin: 'Mississippi River', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 5, image: carpFilletImg },
+  { id: 37, name: 'Carp Steaks', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Circle Cuts', rating: 5, image: carpSteaksImg },
+  { id: 38, name: 'Carp Half Moon', origin: 'Mississippi River', price: 14.99, weight: '5lbs', type: 'Half Moon Cuts', rating: 5, image: carpHalfmoonImg },
+  { id: 39, name: 'Carp Whole', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 5, image: carpWholeImg },
 ];
 
 const ProductCard = ({ product, index }: { product: typeof products[0]; index: number }) => {
