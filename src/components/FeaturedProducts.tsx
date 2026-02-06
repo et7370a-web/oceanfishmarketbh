@@ -10,6 +10,7 @@ import halibutImg from '@/assets/fish-halibut.jpg';
 import snapperImg from '@/assets/fish-snapper.jpg';
 import codImg from '@/assets/fish-cod.jpg';
 import seabassImg from '@/assets/fish-seabass.jpg';
+import seabassWholeImg from '@/assets/fish-seabass-whole.jpg';
 import wholeImg from '@/assets/fish-whole.jpg';
 import filletImg from '@/assets/fish-fillet.jpg';
 import steaksImg from '@/assets/fish-steaks.jpg';
@@ -93,7 +94,7 @@ const products = [
   
   // Chilean Sea Bass
   { id: 12, name: 'Chilean Sea Bass', origin: 'Antarctica', price: 32.99, weight: '5lb', type: 'Cut by Pound', rating: 5, image: seabassImg, badge: 'Chef Favorite', badgeColor: 'bg-primary' },
-  { id: 13, name: 'Chilean Sea Bass Whole', origin: 'Antarctica', price: 29.99, weight: '15lb', type: 'Whole Fish w/o Head', rating: 5, image: wholeImg },
+  { id: 13, name: 'Chilean Sea Bass Whole', origin: 'Antarctica', price: 29.99, weight: '15lb', type: 'Whole Fish w/o Head', rating: 5, image: seabassWholeImg },
   
   // Branzino
   { id: 14, name: 'Branzino Fillet', origin: 'Greece', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: branzinoImg },
