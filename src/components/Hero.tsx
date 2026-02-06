@@ -107,10 +107,10 @@ const Hero = () => {
               { value: '50+', label: 'Fish Varieties' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold text-gold-light">
+                <div className="text-3xl md:text-4xl font-display font-bold text-primary-foreground">
                   {stat.value}
                 </div>
-                <div className="text-sm text-ocean-surface/70 uppercase tracking-wider">
+                <div className="text-sm text-primary-foreground/90 uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>

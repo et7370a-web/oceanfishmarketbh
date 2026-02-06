@@ -38,13 +38,13 @@ const StorySection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="text-ocean-surface">Our story begins where the finest</span>
+            <span className="text-primary-foreground">Our story begins where the finest</span>
             <br />
-            <span className="text-gold-light italic">stories often do—outdoors, with a rod and reel.</span>
+            <span className="text-primary-foreground italic">stories often do—outdoors, with a rod and reel.</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-ocean-surface/80 mb-8 leading-relaxed"
+            className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -54,7 +54,7 @@ const StorySection = () => {
           </motion.p>
 
           <motion.p
-            className="text-lg text-ocean-surface/70 mb-12 leading-relaxed"
+            className="text-lg text-primary-foreground/80 mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -64,7 +64,7 @@ const StorySection = () => {
           </motion.p>
 
           <motion.p
-            className="text-lg text-ocean-surface/70 mb-12 leading-relaxed"
+            className="text-lg text-primary-foreground/80 mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -86,11 +86,11 @@ const StorySection = () => {
                 key={item.label}
                 className="bg-ocean-mid/30 rounded-2xl p-6 border border-ocean-surface/10"
               >
-                <item.icon className="w-8 h-8 text-gold-light mx-auto mb-3" />
-                <div className="text-3xl font-display font-bold text-ocean-surface mb-1">
+                <item.icon className="w-8 h-8 text-primary-foreground mx-auto mb-3" />
+                <div className="text-3xl font-display font-bold text-primary-foreground mb-1">
                   {item.value}
                 </div>
-                <div className="text-sm text-ocean-surface/60 uppercase tracking-wider">
+                <div className="text-sm text-primary-foreground/80 uppercase tracking-wider">
                   {item.label}
                 </div>
               </div>
