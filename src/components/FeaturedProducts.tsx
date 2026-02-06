@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Star, ShoppingBag, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import salmonImg from '@/assets/fish-salmon.jpg';
+import salmonSteaksImg from '@/assets/fish-salmon-steaks.jpg';
 import tunaImg from '@/assets/fish-tuna.jpg';
 import halibutImg from '@/assets/fish-halibut.jpg';
 import snapperImg from '@/assets/fish-snapper.jpg';
@@ -41,7 +42,7 @@ const products = [
   // Salmon
   { id: 1, name: 'King Salmon Fillet', origin: 'Alaska', price: 36.99, weight: '5lbs', type: 'Fillet Sushi Grade', rating: 5, image: salmonImg, badge: 'Best Seller', badgeColor: 'bg-accent' },
   { id: 2, name: 'Salmon Fillet', origin: 'Norway', price: 29.99, weight: '5lb', type: 'Fillet Sushi Grade', rating: 5, image: filletImg },
-  { id: 3, name: 'Salmon Steaks', origin: 'Norway', price: 22.99, weight: '5lb', type: 'Steaks', rating: 4, image: steaksImg },
+  { id: 3, name: 'Salmon Steaks', origin: 'Norway', price: 22.99, weight: '5lb', type: 'Steaks', rating: 4, image: salmonSteaksImg },
   { id: 4, name: 'Salmon Whole Fish', origin: 'Norway', price: 18.99, weight: '15lbs', type: 'Whole Fish', rating: 4, image: wholeImg },
   
   // Tuna
