@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Truck, Clock, MapPin, Package } from 'lucide-react';
+import { Truck, Clock, MapPin, Package, Zap, DollarSign } from 'lucide-react';
 
 const deliveryAreas = [
   'All five boroughs of New York City',
@@ -139,6 +139,83 @@ const ShippingInfo = () => {
                   <br />
                   Store closed. Orders placed during this time will be delivered the following Monday.
                 </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Packaging & Delivery Fee */}
+          <div className="grid lg:grid-cols-2 gap-12 mt-16">
+            <motion.div
+              className="bg-card rounded-3xl p-8 shadow-ocean border border-border/50"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
+                  <Package className="w-7 h-7 text-accent" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary">
+                  Packaging & Drop-Off
+                </h3>
+              </div>
+              
+              <p className="text-muted-foreground mb-6">
+                Your order is delivered in chilled, insulated packaging designed to keep everything cold and fresh. This allows your delivery to be safely left at your doorstep for a short period of time if you're not home.
+              </p>
+              
+              <div className="p-4 bg-accent/10 rounded-xl border border-accent/20">
+                <p className="text-sm text-foreground">
+                  <span className="font-medium">We still recommend bringing it inside as soon as possible.</span>
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-card rounded-3xl p-8 shadow-ocean border border-border/50"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                  <DollarSign className="w-7 h-7 text-secondary" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary">
+                  Delivery Fee
+                </h3>
+              </div>
+              
+              <div className="mb-6">
+                <div className="text-4xl font-display font-bold text-secondary mb-2">
+                  FREE
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Delivery is always free.
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
+                  <Truck className="w-5 h-5 text-secondary flex-shrink-0" />
+                  <span className="text-foreground font-medium">
+                    $99 minimum order
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
+                  <Truck className="w-5 h-5 text-secondary flex-shrink-0" />
+                  <span className="text-foreground font-medium">
+                    No surprises
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
+                  <Truck className="w-5 h-5 text-secondary flex-shrink-0" />
+                  <span className="text-foreground font-medium">
+                    No fine print
+                  </span>
+                </div>
               </div>
             </motion.div>
           </div>
