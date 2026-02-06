@@ -7,16 +7,6 @@ import { Textarea } from '@/components/ui/textarea';
 
 const contactInfo = [
   {
-    icon: Phone,
-    label: 'Phone',
-    value: '(212) 555-FISH',
-  },
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'hello@oceanfishmarket.com',
-  },
-  {
     icon: MapPin,
     label: 'Main Location',
     value: '123 Harbor Street, Brooklyn, NY',
