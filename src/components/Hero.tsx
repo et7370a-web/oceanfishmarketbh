@@ -106,11 +106,11 @@ const Hero = () => {
               { value: '100%', label: 'Sustainable' },
               { value: '50+', label: 'Fish Varieties' },
             ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold text-white drop-shadow-lg">
+              <div key={stat.label} className="text-center bg-black/50 rounded-xl px-6 py-4 backdrop-blur-sm">
+                <div className="text-3xl md:text-4xl font-display font-bold text-white">
                   {stat.value}
                 </div>
-                <div className="text-sm text-white font-semibold uppercase tracking-wider drop-shadow-lg">
+                <div className="text-sm text-white font-semibold uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
