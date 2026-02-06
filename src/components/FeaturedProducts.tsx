@@ -8,6 +8,8 @@ import salmonWholeImg from '@/assets/fish-salmon-whole.jpg';
 import tunaImg from '@/assets/fish-tuna.jpg';
 import halibutImg from '@/assets/fish-halibut.jpg';
 import snapperImg from '@/assets/fish-snapper.jpg';
+import snapperFilletImg from '@/assets/fish-snapper-fillet.jpg';
+import snapperWholeImg from '@/assets/fish-snapper-whole.jpg';
 import codImg from '@/assets/fish-cod.jpg';
 import seabassImg from '@/assets/fish-seabass.jpg';
 import seabassWholeImg from '@/assets/fish-seabass-whole.jpg';
@@ -105,8 +107,8 @@ const products = [
   { id: 8, name: 'Halibut Steaks', origin: 'Arctic Ocean', price: 29.99, weight: '5lb', type: 'Steaks', rating: 5, image: halibutSteaksImg },
   
   // Red Snapper
-  { id: 9, name: 'Red Snapper Fillet', origin: 'USA', price: 23.99, weight: '5lb', type: 'Fillet', rating: 5, image: snapperImg },
-  { id: 10, name: 'Red Snapper Whole', origin: 'USA', price: 16.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: wholeImg },
+  { id: 9, name: 'Red Snapper Fillet', origin: 'USA', price: 23.99, weight: '5lb', type: 'Fillet', rating: 5, image: snapperFilletImg },
+  { id: 10, name: 'Red Snapper Whole', origin: 'USA', price: 16.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: snapperWholeImg },
   
   // COD
   { id: 11, name: 'COD Fillet', origin: 'Alaska', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 5, image: codImg },
