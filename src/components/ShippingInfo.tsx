@@ -5,7 +5,6 @@ const deliveryAreas = [
   'All five boroughs of New York City',
   'Long Island',
   'New Jersey',
-  'Connecticut',
 ];
 
 const schedule = [
