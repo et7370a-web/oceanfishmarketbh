@@ -14,16 +14,16 @@ import butterflyImg from '@/assets/fish-butterfly.jpg';
 import branzinoImg from '@/assets/fish-branzino.jpg';
 import grouperImg from '@/assets/fish-grouper.jpg';
 
-// Country flag emoji mapping
+// Country flag for sourcing origin
 const getCountryFlag = (origin: string): string => {
   const flagMap: Record<string, string> = {
     'Alaska': '🇺🇸',
     'USA': '🇺🇸',
     'Norway': '🇳🇴',
-    'Pacific Ocean': '🌊',
-    'Vietnam/Thailand': '🇻🇳',
-    'Arctic Ocean': '❄️',
-    'Antarctica': '🇦🇶',
+    'Pacific Ocean': '🇯🇵',
+    'Vietnam/Thailand': '🇻🇳🇹🇭',
+    'Arctic Ocean': '🇨🇦',
+    'Antarctica': '🇨🇱',
     'Greece': '🇬🇷',
     'Turkey': '🇹🇷',
     'Mississippi River': '🇺🇸',
