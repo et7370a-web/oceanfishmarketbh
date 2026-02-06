@@ -16,6 +16,8 @@ import filletImg from '@/assets/fish-fillet.jpg';
 import steaksImg from '@/assets/fish-steaks.jpg';
 import butterflyImg from '@/assets/fish-butterfly.jpg';
 import branzinoImg from '@/assets/fish-branzino.jpg';
+import branzinoFilletImg from '@/assets/fish-branzino-fillet.jpg';
+import branzinoWholeImg from '@/assets/fish-branzino-whole.jpg';
 import grouperImg from '@/assets/fish-grouper.jpg';
 import flounderImg from '@/assets/fish-flounder.jpg';
 import halibutSteaksImg from '@/assets/fish-halibut-steaks.jpg';
@@ -97,11 +99,11 @@ const products = [
   { id: 13, name: 'Chilean Sea Bass Whole', origin: 'Antarctica', price: 29.99, weight: '15lb', type: 'Whole Fish w/o Head', rating: 5, image: seabassWholeImg },
   
   // Branzino
-  { id: 14, name: 'Branzino Fillet', origin: 'Greece', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: branzinoImg },
-  { id: 15, name: 'Branzino Fillet', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Fillet', rating: 5, image: branzinoImg },
+  { id: 14, name: 'Branzino Fillet', origin: 'Greece', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: branzinoFilletImg },
+  { id: 15, name: 'Branzino Fillet', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Fillet', rating: 5, image: branzinoFilletImg },
   { id: 16, name: 'Branzino Butterfly', origin: 'Turkey', price: 23.99, weight: '5lb', type: 'Butterfly', rating: 5, image: butterflyImg },
-  { id: 17, name: 'Branzino Whole', origin: 'Greece', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoImg },
-  { id: 18, name: 'Branzino Whole', origin: 'Turkey', price: 15.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoImg },
+  { id: 17, name: 'Branzino Whole', origin: 'Greece', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoWholeImg },
+  { id: 18, name: 'Branzino Whole', origin: 'Turkey', price: 15.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoWholeImg },
   
   // Grouper
   { id: 19, name: 'Grouper Fillet', origin: 'USA', price: 28.99, weight: '5lb', type: 'Fillet', rating: 5, image: grouperImg },
