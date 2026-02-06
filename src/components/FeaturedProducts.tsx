@@ -158,7 +158,15 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
 
           {/* Country Flag */}
           <div className="absolute bottom-3 right-3 bg-card/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-lg">
-            <span className="text-xl">{getCountryFlag(product.origin)}</span>
+            {isUSOrigin(product.origin) ? (
+              <img 
+                src={usaFlagImg} 
+                alt="USA" 
+                className="w-8 h-6 object-contain"
+              />
+            ) : (
+              <span className="text-xl">{getCountryFlag(product.origin)}</span>
+            )}
           </div>
         </div>
 
@@ -183,13 +191,6 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
             <p className="text-sm text-muted-foreground">
               {product.origin}
             </p>
-            {isUSOrigin(product.origin) && (
-              <img 
-                src={usaFlagImg} 
-                alt="USA" 
-                className="ml-auto w-8 h-5 object-cover rounded-sm shadow-sm"
-              />
-            )}
           </div>
 
           {/* Price */}
