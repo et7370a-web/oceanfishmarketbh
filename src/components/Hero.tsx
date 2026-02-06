@@ -88,7 +88,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-ocean-surface/50 text-ocean-surface hover:bg-ocean-surface/10 px-8 py-6 text-lg"
+              className="border-2 border-ocean-deep bg-white text-ocean-deep hover:bg-ocean-deep hover:text-white px-8 py-6 text-lg font-semibold"
             >
               Our Story
             </Button>
