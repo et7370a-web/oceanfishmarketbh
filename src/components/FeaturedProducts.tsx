@@ -22,8 +22,10 @@ import grouperImg from '@/assets/fish-grouper.jpg';
 import grouperSteaksImg from '@/assets/fish-grouper-steaks.jpg';
 import grouperWholeImg from '@/assets/fish-grouper-whole.jpg';
 import flounderImg from '@/assets/fish-flounder.jpg';
+import flounderWholeImg from '@/assets/fish-flounder-whole.jpg';
 import halibutSteaksImg from '@/assets/fish-halibut-steaks.jpg';
 import tilefishImg from '@/assets/fish-tilefish.jpg';
+import tilefishWholeImg from '@/assets/fish-tilefish-whole.jpg';
 import whitingImg from '@/assets/fish-whiting.jpg';
 import mulletImg from '@/assets/fish-mullet.jpg';
 import buffaloImg from '@/assets/fish-buffalo.jpg';
@@ -114,11 +116,11 @@ const products = [
   
   // Flounder
   { id: 22, name: 'Flounder Fillet', origin: 'USA', price: 22.99, weight: '5lb', type: 'Fillet', rating: 5, image: flounderImg },
-  { id: 23, name: 'Flounder Whole', origin: 'USA', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: flounderImg },
+  { id: 23, name: 'Flounder Whole', origin: 'USA', price: 18.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: flounderWholeImg },
   
   // Tile Fish
   { id: 24, name: 'Tile Fish Fillet', origin: 'USA', price: 19.99, weight: '5lbs', type: 'Fillet', rating: 5, image: tilefishImg },
-  { id: 25, name: 'Tile Fish Whole', origin: 'USA', price: 16.99, weight: '5lbs', type: 'Whole Fish', rating: 5, image: tilefishImg },
+  { id: 25, name: 'Tile Fish Whole', origin: 'USA', price: 16.99, weight: '5lbs', type: 'Whole Fish', rating: 5, image: tilefishWholeImg },
   
   // Whiting
   { id: 26, name: 'Whiting Butterfly Fillet', origin: 'USA', price: 14.99, weight: '5lb', type: 'Butterfly Fillet', rating: 5, image: whitingImg },
