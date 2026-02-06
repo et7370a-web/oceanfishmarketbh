@@ -84,13 +84,13 @@ const StorySection = () => {
             {milestones.map((item, index) => (
               <div
                 key={item.label}
-                className="bg-black/50 rounded-2xl p-6 border border-white/10 backdrop-blur-sm"
+                className="bg-ocean-surface rounded-2xl p-6 border border-ocean-mid/20"
               >
-                <item.icon className="w-8 h-8 text-white mx-auto mb-3" />
-                <div className="text-3xl font-display font-bold text-white mb-1">
+                <item.icon className="w-8 h-8 text-ocean-deep mx-auto mb-3" />
+                <div className="text-3xl font-display font-bold text-ocean-deep mb-1">
                   {item.value}
                 </div>
-                <div className="text-sm text-white/80 uppercase tracking-wider">
+                <div className="text-sm text-ocean-deep/80 uppercase tracking-wider font-semibold">
                   {item.label}
                 </div>
               </div>
