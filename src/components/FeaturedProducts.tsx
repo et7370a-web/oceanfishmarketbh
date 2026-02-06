@@ -22,14 +22,36 @@ import whitingImg from '@/assets/fish-whiting.jpg';
 import mulletImg from '@/assets/fish-mullet.jpg';
 import buffaloImg from '@/assets/fish-buffalo.jpg';
 import carpImg from '@/assets/fish-carp.jpg';
-import usaFlagImg from '@/assets/flag-usa.png';
 
-// Check if origin is US-based
-const isUSOrigin = (origin: string): boolean => {
-  return origin === 'USA' || origin === 'Alaska' || origin === 'Mississippi River';
+// Flag images
+import usaFlagImg from '@/assets/flag-usa.png';
+import norwayFlagImg from '@/assets/flag-norway.png';
+import japanFlagImg from '@/assets/flag-japan.png';
+import vietnamFlagImg from '@/assets/flag-vietnam.png';
+import thailandFlagImg from '@/assets/flag-thailand.png';
+import canadaFlagImg from '@/assets/flag-canada.png';
+import chileFlagImg from '@/assets/flag-chile.png';
+import greeceFlagImg from '@/assets/flag-greece.png';
+import turkeyFlagImg from '@/assets/flag-turkey.png';
+
+// Get flag image for origin
+const getFlagImage = (origin: string): string | null => {
+  const flagMap: Record<string, string> = {
+    'Alaska': usaFlagImg,
+    'USA': usaFlagImg,
+    'Mississippi River': usaFlagImg,
+    'Norway': norwayFlagImg,
+    'Pacific Ocean': japanFlagImg,
+    'Vietnam/Thailand': vietnamFlagImg,
+    'Arctic Ocean': canadaFlagImg,
+    'Antarctica': chileFlagImg,
+    'Greece': greeceFlagImg,
+    'Turkey': turkeyFlagImg,
+  };
+  return flagMap[origin] || null;
 };
 
-// Country flag for sourcing origin
+// Country flag emoji for text display
 const getCountryFlag = (origin: string): string => {
   const flagMap: Record<string, string> = {
     'Alaska': '🇺🇸',
@@ -158,10 +180,10 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
 
           {/* Country Flag */}
           <div className="absolute bottom-3 right-3 bg-card/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-lg">
-            {isUSOrigin(product.origin) ? (
+            {getFlagImage(product.origin) ? (
               <img 
-                src={usaFlagImg} 
-                alt="USA" 
+                src={getFlagImage(product.origin)!} 
+                alt={product.origin} 
                 className="w-8 h-6 object-contain"
               />
             ) : (
