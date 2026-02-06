@@ -17,6 +17,7 @@ import butterflyImg from '@/assets/fish-butterfly.jpg';
 import branzinoImg from '@/assets/fish-branzino.jpg';
 import grouperImg from '@/assets/fish-grouper.jpg';
 import flounderImg from '@/assets/fish-flounder.jpg';
+import halibutSteaksImg from '@/assets/fish-halibut-steaks.jpg';
 import tilefishImg from '@/assets/fish-tilefish.jpg';
 import whitingImg from '@/assets/fish-whiting.jpg';
 import mulletImg from '@/assets/fish-mullet.jpg';
@@ -77,11 +78,11 @@ const products = [
   
   // Tuna
   { id: 5, name: 'Tuna Fillet Fresh', origin: 'Pacific Ocean', price: 24.99, weight: '5lbs', type: 'Sushi Grade', rating: 5, image: tunaImg, badge: 'Premium', badgeColor: 'bg-secondary' },
-  { id: 6, name: 'Tuna Steaks', origin: 'Vietnam/Thailand', price: 18.99, weight: '5lb', type: 'Steaks Frozen', rating: 4, image: steaksImg },
+  { id: 6, name: 'Tuna Steaks', origin: 'Vietnam/Thailand', price: 18.99, weight: '5lb', type: 'Steaks Frozen', rating: 5, image: steaksImg },
   
   // Halibut
   { id: 7, name: 'Halibut Fillet', origin: 'Arctic Ocean', price: 36.99, weight: '5lbs', type: 'Fillet', rating: 5, image: halibutImg },
-  { id: 8, name: 'Halibut Steaks', origin: 'Arctic Ocean', price: 29.99, weight: '5lb', type: 'Steaks', rating: 5, image: steaksImg },
+  { id: 8, name: 'Halibut Steaks', origin: 'Arctic Ocean', price: 29.99, weight: '5lb', type: 'Steaks', rating: 5, image: halibutSteaksImg },
   
   // Red Snapper
   { id: 9, name: 'Red Snapper Fillet', origin: 'USA', price: 23.99, weight: '5lb', type: 'Fillet', rating: 5, image: snapperImg },
