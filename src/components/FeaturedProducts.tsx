@@ -22,6 +22,12 @@ import whitingImg from '@/assets/fish-whiting.jpg';
 import mulletImg from '@/assets/fish-mullet.jpg';
 import buffaloImg from '@/assets/fish-buffalo.jpg';
 import carpImg from '@/assets/fish-carp.jpg';
+import usaFlagImg from '@/assets/flag-usa.png';
+
+// Check if origin is US-based
+const isUSOrigin = (origin: string): boolean => {
+  return origin === 'USA' || origin === 'Alaska' || origin === 'Mississippi River';
+};
 
 // Country flag for sourcing origin
 const getCountryFlag = (origin: string): string => {
@@ -177,8 +183,12 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
             <p className="text-sm text-muted-foreground">
               {product.origin}
             </p>
-            {(product.origin === 'USA' || product.origin === 'Alaska' || product.origin === 'Mississippi River') && (
-              <span className="text-lg ml-auto">🇺🇸</span>
+            {isUSOrigin(product.origin) && (
+              <img 
+                src={usaFlagImg} 
+                alt="USA" 
+                className="ml-auto w-8 h-5 object-cover rounded-sm shadow-sm"
+              />
             )}
           </div>
 
