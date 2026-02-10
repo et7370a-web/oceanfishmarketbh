@@ -82,12 +82,15 @@ const ShippingInfo = () => {
               </ul>
 
               <div className="mt-8 p-4 bg-ocean-foam/50 rounded-xl">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 mb-2">
                   <Package className="w-5 h-5 text-primary" />
                   <span className="text-sm text-foreground font-medium">
-                    If you're in our delivery area, you're good to go!
+                    5 lb minimum order — can be the same or various types of fish
                   </span>
                 </div>
+                <p className="text-xs text-muted-foreground ml-8">
+                  Mix & match any fish from our selection to meet the minimum.
+                </p>
               </div>
             </motion.div>
 
@@ -198,12 +201,6 @@ const ShippingInfo = () => {
               </div>
               
               <div className="space-y-3">
-              <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
-                  <Truck className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-foreground font-medium">
-                    5 lb minimum order (mix & match any fish)
-                  </span>
-                </div>
                 <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
                   <Truck className="w-5 h-5 text-secondary flex-shrink-0" />
                   <span className="text-foreground font-medium">

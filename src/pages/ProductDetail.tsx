@@ -123,8 +123,7 @@ const ProductDetail = () => {
 
               {/* Order Info */}
               <div className="p-4 bg-muted/50 rounded-xl text-sm text-muted-foreground">
-                <p className="font-medium text-foreground mb-1">📦 5 lb minimum order</p>
-                <p>You can mix & match any fish to meet the minimum. Free delivery to NYC, Long Island & NJ.</p>
+                <p>Free delivery to NYC, Long Island & NJ.</p>
               </div>
             </motion.div>
           </div>
