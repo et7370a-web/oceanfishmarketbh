@@ -198,10 +198,10 @@ const ShippingInfo = () => {
               </div>
               
               <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
+              <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
                   <Truck className="w-5 h-5 text-secondary flex-shrink-0" />
                   <span className="text-foreground font-medium">
-                    $99 minimum order
+                    5 lb minimum order (mix & match any fish)
                   </span>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-secondary/10 rounded-lg">
