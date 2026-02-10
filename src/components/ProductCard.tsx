@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Star, ShoppingBag, Eye } from 'lucide-react';
+import { Star, ShoppingBag, Eye, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Product, getFlagImage, getCountryFlag } from '@/data/products';
 
@@ -8,7 +9,12 @@ interface ProductCardProps {
   index: number;
 }
 
+const isWholeFish = (product: Product) =>
+  product.type.toLowerCase().includes('whole');
+
 const ProductCard = ({ product, index }: ProductCardProps) => {
+  const wholeFish = isWholeFish(product);
+
   return (
     <motion.div
       className="group relative"
@@ -17,91 +23,86 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
     >
-      <div className="relative bg-card rounded-2xl overflow-hidden shadow-ocean hover:shadow-2xl transition-all duration-500 border border-border/50">
-        {/* Image Container */}
-        <div className="relative aspect-square overflow-hidden bg-muted/30">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          
-          {/* Overlay Actions */}
-          <div className="absolute inset-0 bg-ocean-deep/0 group-hover:bg-ocean-deep/40 transition-all duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
-            <Button
-              size="icon"
-              className="bg-card/90 hover:bg-card text-foreground rounded-full w-12 h-12 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
-            >
-              <Eye className="w-5 h-5" />
-            </Button>
-            <Button
-              size="icon"
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full w-12 h-12 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75"
-            >
-              <ShoppingBag className="w-5 h-5" />
-            </Button>
-          </div>
+      <Link to={`/fish/${product.species}/${product.id}`} className="block">
+        <div className="relative bg-card rounded-2xl overflow-hidden shadow-ocean hover:shadow-2xl transition-all duration-500 border border-border/50">
+          {/* Image Container */}
+          <div className="relative aspect-square overflow-hidden bg-muted/30">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
 
-          {/* Badge */}
-          {product.badge && (
-            <span className={`absolute top-4 left-4 ${product.badgeColor} text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider`}>
-              {product.badge}
-            </span>
-          )}
-
-          {/* Country Flag */}
-          <div className="absolute bottom-3 right-3 bg-card/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-lg">
-            {getFlagImage(product.origin) ? (
-              <img 
-                src={getFlagImage(product.origin)!} 
-                alt={product.origin} 
-                className="w-8 h-6 object-contain"
-              />
-            ) : (
-              <span className="text-xl">{getCountryFlag(product.origin)}</span>
+            {/* Badge */}
+            {product.badge && (
+              <span className={`absolute top-4 left-4 ${product.badgeColor} text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider`}>
+                {product.badge}
+              </span>
             )}
-          </div>
-        </div>
 
-        {/* Content */}
-        <div className="p-5">
-          {/* Rating */}
-          <div className="flex items-center gap-1 mb-2">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-4 h-4 ${i < product.rating ? 'text-accent fill-accent' : 'text-muted'}`}
-              />
-            ))}
-          </div>
-
-          {/* Name & Origin */}
-          <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-            {product.name}
-          </h3>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg">{getCountryFlag(product.origin)}</span>
-            <p className="text-sm text-muted-foreground">
-              {product.origin}
-            </p>
-          </div>
-
-          {/* Price */}
-          <div className="flex flex-col gap-1">
-            <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-bold text-primary">
-                ${product.price.toFixed(2)}
-              </span>
-              <span className="text-sm text-muted-foreground">
-                / lb
-              </span>
+            {/* Country Flag */}
+            <div className="absolute bottom-3 right-3 bg-card/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-lg">
+              {getFlagImage(product.origin) ? (
+                <img 
+                  src={getFlagImage(product.origin)!} 
+                  alt={product.origin} 
+                  className="w-8 h-6 object-contain"
+                />
+              ) : (
+                <span className="text-xl">{getCountryFlag(product.origin)}</span>
+              )}
             </div>
-            <span className="text-xs text-muted-foreground">
-              {product.weight} minimum order
-            </span>
+          </div>
+
+          {/* Content */}
+          <div className="p-5">
+            {/* Rating */}
+            <div className="flex items-center gap-1 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-4 h-4 ${i < product.rating ? 'text-accent fill-accent' : 'text-muted'}`}
+                />
+              ))}
+            </div>
+
+            {/* Name & Origin */}
+            <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              {product.name}
+            </h3>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">{getCountryFlag(product.origin)}</span>
+              <p className="text-sm text-muted-foreground">
+                {product.origin}
+              </p>
+            </div>
+
+            {/* Price */}
+            <div className="flex flex-col gap-1">
+              {wholeFish ? (
+                <div className="flex items-center gap-2 text-primary">
+                  <Phone className="w-4 h-4" />
+                  <span className="font-bold text-lg">Call for Pricing</span>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-primary">
+                      ${product.price.toFixed(2)}
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      / lb
+                    </span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">
+                    {product.weight} minimum order
+                  </span>
+                </>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 };
