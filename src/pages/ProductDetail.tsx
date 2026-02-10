@@ -1,13 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Phone, Star, MapPin, Package } from 'lucide-react';
+import { ArrowLeft, Star, MapPin, Package } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { products, speciesInfo, getProductsBySpecies, getFlagImage, getCountryFlag } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
-
-const isWholeFish = (type: string) => type.toLowerCase().includes('whole');
 
 const ProductDetail = () => {
   const { species, productId } = useParams<{ species: string; productId: string }>();
@@ -29,7 +27,6 @@ const ProductDetail = () => {
     );
   }
 
-  const wholeFish = isWholeFish(product.type);
   const relatedProducts = getProductsBySpecies(species).filter((p) => p.id !== product.id);
 
   return (
@@ -110,38 +107,18 @@ const ProductDetail = () => {
 
               {/* Pricing */}
               <div className="mb-8 p-6 bg-card rounded-2xl border border-border/50 shadow-ocean">
-                {wholeFish ? (
-                  <div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <Phone className="w-6 h-6 text-primary" />
-                      <span className="font-display text-2xl font-bold text-primary">Call for Pricing</span>
-                    </div>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      Whole fish pricing varies based on availability, size, and current market conditions.
-                      Since we can't predict exactly what's in stock at any given time, please call us for
-                      the most accurate pricing and availability.
-                    </p>
-                    <a href="tel:+17188331717">
-                      <Button className="w-full" size="lg">
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call (718) 833-1717
-                      </Button>
-                    </a>
+                <div>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="font-display text-4xl font-bold text-primary">
+                      ${product.price.toFixed(2)}
+                    </span>
+                    <span className="text-muted-foreground">/ lb</span>
                   </div>
-                ) : (
-                  <div>
-                    <div className="flex items-baseline gap-2 mb-2">
-                      <span className="font-display text-4xl font-bold text-primary">
-                        ${product.price.toFixed(2)}
-                      </span>
-                      <span className="text-muted-foreground">/ lb</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Package className="w-4 h-4" />
-                      <span>{product.weight} minimum order</span>
-                    </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Package className="w-4 h-4" />
+                    <span>{product.weight} minimum order</span>
                   </div>
-                )}
+                </div>
               </div>
 
               {/* Order Info */}

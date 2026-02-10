@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Star, ShoppingBag, Eye, Phone } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { Product, getFlagImage, getCountryFlag } from '@/data/products';
 
 interface ProductCardProps {
@@ -9,12 +8,7 @@ interface ProductCardProps {
   index: number;
 }
 
-const isWholeFish = (product: Product) =>
-  product.type.toLowerCase().includes('whole');
-
 const ProductCard = ({ product, index }: ProductCardProps) => {
-  const wholeFish = isWholeFish(product);
-
   return (
     <motion.div
       className="group relative"
@@ -79,26 +73,17 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
 
             {/* Price */}
             <div className="flex flex-col gap-1">
-              {wholeFish ? (
-                <div className="flex items-center gap-2 text-primary">
-                  <Phone className="w-4 h-4" />
-                  <span className="font-bold text-lg">Call for Pricing</span>
-                </div>
-              ) : (
-                <>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-primary">
-                      ${product.price.toFixed(2)}
-                    </span>
-                    <span className="text-sm text-muted-foreground">
-                      / lb
-                    </span>
-                  </div>
-                  <span className="text-xs text-muted-foreground">
-                    {product.weight} minimum order
-                  </span>
-                </>
-              )}
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-bold text-primary">
+                  ${product.price.toFixed(2)}
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  / lb
+                </span>
+              </div>
+              <span className="text-xs text-muted-foreground">
+                {product.weight} minimum order
+              </span>
             </div>
           </div>
         </div>
