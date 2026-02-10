@@ -81,9 +81,6 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
                   / lb
                 </span>
               </div>
-              <span className="text-xs text-muted-foreground">
-                {product.weight} minimum order
-              </span>
             </div>
           </div>
         </div>
