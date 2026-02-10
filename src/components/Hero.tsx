@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Waves } from 'lucide-react';
+import { ArrowRight, Truck, Fish } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-ocean.jpg';
+import heroImage from '@/assets/hero-fish-market.jpg';
 
 const Hero = () => {
   return (
@@ -10,10 +10,10 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Ocean depths"
+          alt="Premium New York fish market"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/60 via-ocean-deep/40 to-ocean-deep/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/50 to-ocean-deep/90" />
       </div>
 
       {/* Animated Wave Overlay */}
@@ -34,41 +34,41 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-20">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Premium Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark text-ocean-surface mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-dark text-ocean-surface mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Waves className="w-4 h-4" />
+            <Fish className="w-4 h-4" />
             <span className="text-sm font-medium tracking-wide uppercase">
-              Restaurant-Quality Seafood
+              New York's Premium Fish Market
             </span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-primary-foreground">Fresh From</span>
+            <span className="text-primary-foreground">Wild-Caught.</span>
             <br />
-            <span className="text-gold-light italic">Ocean to Table</span>
+            <span className="text-gold-light italic">Delivered Fresh.</span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
-            className="text-xl md:text-2xl text-ocean-surface/90 mb-10 max-w-2xl mx-auto font-light"
+            className="text-lg sm:text-xl md:text-2xl text-ocean-surface/90 mb-10 max-w-2xl mx-auto font-light"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Premium wild-caught fish sourced from trusted fisheries worldwide.
-            Filleted by experts. Delivered fresh to your door.
+            Premium wild-caught seafood sourced daily from trusted fisheries.
+            Expert filleting. Next-day delivery to your door across NYC, Long Island & NJ.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -78,39 +78,44 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg font-semibold shadow-ocean group"
-            >
-              Explore Our Catch
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-ocean-deep bg-white text-ocean-deep hover:bg-ocean-deep hover:text-white px-8 py-6 text-lg font-semibold"
-            >
-              Our Story
-            </Button>
+            <a href="#products">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg font-semibold shadow-ocean group w-full sm:w-auto"
+              >
+                Shop Our Catch
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a href="#story">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-ocean-deep bg-white text-ocean-deep hover:bg-ocean-deep hover:text-white px-8 py-6 text-lg font-semibold w-full sm:w-auto"
+              >
+                Our Story
+              </Button>
+            </a>
           </motion.div>
 
           {/* Trust Indicators */}
           <motion.div
-            className="mt-16 flex flex-wrap justify-center gap-8 md:gap-12"
+            className="mt-16 flex flex-wrap justify-center gap-4 md:gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
             {[
-              { value: '24hr', label: 'Fresh Delivery' },
-              { value: '100%', label: 'Sustainable' },
-              { value: '50+', label: 'Fish Varieties' },
+              { value: 'Next-Day', label: 'Delivery', icon: Truck },
+              { value: 'Wild', label: 'Caught', icon: Fish },
+              { value: '30+', label: 'Years Experience' },
+              { value: 'Kosher', label: 'Certified' },
             ].map((stat) => (
-              <div key={stat.label} className="text-center bg-black/50 rounded-xl px-6 py-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-4xl font-display font-bold text-white">
+              <div key={stat.label} className="text-center bg-black/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white">
                   {stat.value}
                 </div>
-                <div className="text-sm text-white font-semibold uppercase tracking-wider">
+                <div className="text-xs sm:text-sm text-white font-semibold uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { MapPin, Award, Users, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { MapPin, Award, Users, Calendar, Anchor, Heart } from 'lucide-react';
+import gourmetFishImg from '@/assets/gourmet-fish.jpg';
 
 const milestones = [
   { icon: Calendar, label: 'Founded', value: '1994' },
   { icon: Users, label: 'Team Members', value: '120+' },
   { icon: MapPin, label: 'Locations', value: '3' },
-  { icon: Award, label: 'Certifications', value: 'Kosher' },
+  { icon: Award, label: 'Certified', value: 'Kosher' },
 ];
 
 const StorySection = () => {
@@ -20,96 +20,117 @@ const StorySection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.span
-            className="inline-block text-gold-light font-semibold uppercase tracking-widest text-sm mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Our Story
-          </motion.span>
-
-          <motion.h2
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-white">Our story begins where the finest</span>
-            <br />
-            <span className="text-white italic">stories often do—outdoors, with a rod and reel.</span>
-          </motion.h2>
-
-          <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Founder Slavik was first introduced to the principles of patience, precision, and quality while fly-fishing for rainbow trout alongside his grandfather near his childhood mountain home. What started as a simple pursuit of the perfect catch evolved into a lifelong dedication to excellence—one rooted in respect for craft, sourcing, and time-honored standards.
-          </motion.p>
-
-          <motion.p
-            className="text-lg text-white/80 mb-12 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Today, we are proud to operate three thriving retail locations alongside a large-scale wholesale operation, giving us rare, hands-on command of the entire supply chain. This end-to-end expertise allows us to maintain uncompromising standards at every stage, from origin to offering.
-          </motion.p>
-
-          <motion.p
-            className="text-lg text-white/80 mb-12 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            For us, quality is not a benchmark to meet, it is the foundation of everything we do.
-          </motion.p>
-
-          {/* Milestones */}
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {milestones.map((item, index) => (
-              <div
-                key={item.label}
-                className="bg-ocean-surface rounded-2xl p-6 border border-ocean-mid/20"
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div>
+              <motion.span
+                className="inline-block text-gold-light font-semibold uppercase tracking-widest text-sm mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
               >
-                <item.icon className="w-8 h-8 text-ocean-deep mx-auto mb-3" />
-                <div className="text-3xl font-display font-bold text-ocean-deep mb-1">
-                  {item.value}
-                </div>
-                <div className="text-sm text-ocean-deep/80 uppercase tracking-wider font-semibold">
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+                Our Story
+              </motion.span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Button
-              size="lg"
-              className="bg-gold-gradient hover:opacity-90 text-ocean-deep font-semibold px-8 shadow-gold"
-            >
-              Read Our Full Story
-            </Button>
-          </motion.div>
+              <motion.h2
+                className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-white">Where tradition meets</span>
+                <br />
+                <span className="text-gold-light italic">uncompromising quality.</span>
+              </motion.h2>
+
+              <motion.p
+                className="text-base sm:text-lg text-white/90 mb-6 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Founder Slavik's journey began with a rod and reel beside his grandfather, fly-fishing
+                for rainbow trout near his childhood mountain home. Those early mornings instilled the
+                values that define us today: patience, precision, and an unwavering commitment to quality.
+              </motion.p>
+
+              <motion.p
+                className="text-base sm:text-lg text-white/80 mb-6 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                After decades in the seafood industry, Slavik built a business rooted in the same
+                principles — sourcing the finest wild-caught fish from trusted waters around the globe,
+                and delivering it with the care it deserves. Today, our three retail locations and
+                large-scale wholesale operation give us rare, hands-on control of the entire supply chain.
+              </motion.p>
+
+              <motion.div
+                className="flex items-center gap-6 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-2">
+                  <Anchor className="w-5 h-5 text-gold-light" />
+                  <span className="text-white/80 text-sm">Sourced Globally</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-gold-light" />
+                  <span className="text-white/80 text-sm">Family Operated</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Image & Milestones */}
+            <div>
+              <motion.div
+                className="rounded-3xl overflow-hidden shadow-2xl mb-8"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src={gourmetFishImg}
+                  alt="Premium seafood preparation"
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+
+              {/* Milestones */}
+              <motion.div
+                className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                {milestones.map((item) => (
+                  <div
+                    key={item.label}
+                    className="bg-ocean-surface rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-ocean-mid/20 text-center"
+                  >
+                    <item.icon className="w-6 sm:w-7 h-6 sm:h-7 text-ocean-deep mx-auto mb-2" />
+                    <div className="text-xl sm:text-2xl font-display font-bold text-ocean-deep mb-0.5">
+                      {item.value}
+                    </div>
+                    <div className="text-xs text-ocean-deep/80 uppercase tracking-wider font-semibold">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

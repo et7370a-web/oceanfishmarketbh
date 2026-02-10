@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Star, MapPin, Package } from 'lucide-react';
+import { ArrowLeft, Star, MapPin, Package, Phone, Plus, Minus } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { products, speciesInfo, getProductsBySpecies, getFlagImage, getCountryFlag } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 
+const isWholeFish = (type: string) => type.toLowerCase().includes('whole');
+
 const ProductDetail = () => {
   const { species, productId } = useParams<{ species: string; productId: string }>();
+  const [quantity, setQuantity] = useState(1);
 
   const product = products.find((p) => p.id === Number(productId));
 
@@ -27,7 +31,12 @@ const ProductDetail = () => {
     );
   }
 
+  const wholeFish = isWholeFish(product.type);
   const relatedProducts = getProductsBySpecies(species).filter((p) => p.id !== product.id);
+
+  // Get all available prep types for this species
+  const speciesProducts = getProductsBySpecies(species);
+  const prepTypes = [...new Set(speciesProducts.map((p) => p.type))];
 
   return (
     <div className="min-h-screen bg-background">
@@ -45,7 +54,7 @@ const ProductDetail = () => {
 
         {/* Product Detail */}
         <section className="container mx-auto px-4 pb-16">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Image */}
             <motion.div
               className="relative rounded-3xl overflow-hidden shadow-ocean border border-border/50"
@@ -57,17 +66,18 @@ const ProductDetail = () => {
                 src={product.image}
                 alt={product.name}
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               {product.badge && (
-                <span className={`absolute top-6 left-6 ${product.badgeColor} text-primary-foreground text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider`}>
+                <span className={`absolute top-4 left-4 sm:top-6 sm:left-6 ${product.badgeColor} text-primary-foreground text-xs sm:text-sm font-semibold px-3 sm:px-4 py-1 sm:py-1.5 rounded-full uppercase tracking-wider`}>
                   {product.badge}
                 </span>
               )}
-              <div className="absolute bottom-4 right-4 bg-card/90 backdrop-blur-sm rounded-md px-3 py-1.5 shadow-lg">
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-card/90 backdrop-blur-sm rounded-md px-2 sm:px-3 py-1 sm:py-1.5 shadow-lg">
                 {getFlagImage(product.origin) ? (
-                  <img src={getFlagImage(product.origin)!} alt={product.origin} className="w-10 h-7 object-contain" />
+                  <img src={getFlagImage(product.origin)!} alt={product.origin} className="w-8 sm:w-10 h-5 sm:h-7 object-contain" />
                 ) : (
-                  <span className="text-2xl">{getCountryFlag(product.origin)}</span>
+                  <span className="text-xl sm:text-2xl">{getCountryFlag(product.origin)}</span>
                 )}
               </div>
             </motion.div>
@@ -82,48 +92,117 @@ const ProductDetail = () => {
               {/* Rating */}
               <div className="flex items-center gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-5 h-5 ${i < product.rating ? 'text-accent fill-accent' : 'text-muted'}`} />
+                  <Star key={i} className={`w-4 sm:w-5 h-4 sm:h-5 ${i < product.rating ? 'text-accent fill-accent' : 'text-muted'}`} />
                 ))}
               </div>
 
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2">
                 {product.name}
               </h1>
 
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-2 mb-4">
                 <MapPin className="w-4 h-4 text-muted-foreground" />
                 <span className="text-muted-foreground">{product.origin}</span>
               </div>
 
-              {/* Preparation Type */}
+              {/* Description */}
+              <p className="text-muted-foreground mb-6 text-sm sm:text-base leading-relaxed">
+                Fresh, wild-caught {speciesInfo[species].name.toLowerCase()} sourced daily from trusted fisheries.
+                Hand-selected for quality, expertly prepared, and delivered to your door at peak freshness.
+              </p>
+
+              {/* Preparation Type Selector */}
               <div className="mb-6">
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
                   Preparation
                 </h3>
-                <span className="inline-block bg-primary/10 text-primary font-semibold px-4 py-2 rounded-lg border border-primary/20">
-                  {product.type}
-                </span>
-              </div>
-
-              {/* Pricing */}
-              <div className="mb-8 p-6 bg-card rounded-2xl border border-border/50 shadow-ocean">
-                <div>
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="font-display text-4xl font-bold text-primary">
-                      ${product.price.toFixed(2)}
-                    </span>
-                    <span className="text-muted-foreground">/ lb</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Package className="w-4 h-4" />
-                    <span>{product.weight} minimum order</span>
-                  </div>
+                <div className="flex flex-wrap gap-2">
+                  {prepTypes.map((type) => {
+                    const matchingProduct = speciesProducts.find((p) => p.type === type);
+                    const isActive = product.type === type;
+                    return (
+                      <Link
+                        key={type}
+                        to={`/fish/${species}/${matchingProduct?.id}`}
+                      >
+                        <Button
+                          variant={isActive ? 'default' : 'outline'}
+                          size="sm"
+                          className={isActive ? '' : 'border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-primary-foreground'}
+                        >
+                          {type}
+                        </Button>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
 
+              {/* Pricing & Quantity */}
+              <div className="mb-6 p-5 sm:p-6 bg-card rounded-2xl border border-border/50 shadow-ocean">
+                {wholeFish ? (
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <Phone className="w-6 h-6 text-primary" />
+                      <span className="font-display text-xl sm:text-2xl font-bold text-primary">Call for Pricing</span>
+                    </div>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Whole fish pricing varies by size and availability. Give us a call for
+                      current stock and pricing.
+                    </p>
+                    <a href="tel:+16467509232">
+                      <Button className="w-full" size="lg">
+                        <Phone className="w-4 h-4 mr-2" />
+                        Call +1 (646) 750-9232
+                      </Button>
+                    </a>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="font-display text-3xl sm:text-4xl font-bold text-primary">
+                        ${product.price.toFixed(2)}
+                      </span>
+                      <span className="text-muted-foreground">/ lb</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground mb-4">Sold in 1 lb units</p>
+
+                    {/* Quantity Selector */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-sm font-semibold text-foreground">Quantity (lbs):</span>
+                      <div className="flex items-center border-2 border-border rounded-lg overflow-hidden">
+                        <button
+                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                          className="p-2 sm:p-3 hover:bg-muted transition-colors active:bg-muted/80"
+                          aria-label="Decrease quantity"
+                        >
+                          <Minus className="w-4 h-4" />
+                        </button>
+                        <span className="px-4 sm:px-6 py-2 font-bold text-lg min-w-[3rem] text-center">
+                          {quantity}
+                        </span>
+                        <button
+                          onClick={() => setQuantity(quantity + 1)}
+                          className="p-2 sm:p-3 hover:bg-muted transition-colors active:bg-muted/80"
+                          aria-label="Increase quantity"
+                        >
+                          <Plus className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-3">
+                      Subtotal: <strong className="text-foreground">${(product.price * quantity).toFixed(2)}</strong>
+                    </p>
+                  </div>
+                )}
+              </div>
+
               {/* Order Info */}
-              <div className="p-4 bg-muted/50 rounded-xl text-sm text-muted-foreground">
-                <p>Free delivery to NYC, Long Island & NJ.</p>
+              <div className="space-y-2">
+                <div className="p-3 sm:p-4 bg-muted/50 rounded-xl text-sm text-muted-foreground flex items-start gap-3">
+                  <Package className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                  <p>5 lb minimum total order — mix & match any fish. Free delivery to NYC, Long Island & NJ.</p>
+                </div>
               </div>
             </motion.div>
           </div>
