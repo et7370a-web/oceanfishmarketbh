@@ -1,12 +1,15 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import ProductCard from '@/components/ProductCard';
 import { products, speciesInfo, getAllSpecies } from '@/data/products';
 
 const FeaturedProducts = () => {
-  // Show first 6 products as featured
-  const featuredProducts = products.slice(0, 6);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const filteredProducts = activeFilter
+    ? products.filter((p) => p.species === activeFilter)
+    : products;
 
   return (
     <section id="products" className="py-24 bg-background">
@@ -43,7 +46,7 @@ const FeaturedProducts = () => {
           </motion.p>
         </div>
 
-        {/* Species Navigation */}
+        {/* Species Filter */}
         <motion.div
           className="flex flex-wrap justify-center gap-3 mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -51,37 +54,33 @@ const FeaturedProducts = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
+          <Button
+            variant={activeFilter === null ? 'default' : 'outline'}
+            onClick={() => setActiveFilter(null)}
+            className={activeFilter === null ? '' : 'border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all'}
+          >
+            All
+          </Button>
           {getAllSpecies().map((species) => (
-            <Link key={species} to={`/fish/${species}`}>
-              <Button
-                variant="outline"
-                className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all"
-              >
-                {speciesInfo[species].name}
-              </Button>
-            </Link>
+            <Button
+              key={species}
+              variant={activeFilter === species ? 'default' : 'outline'}
+              onClick={() => setActiveFilter(species)}
+              className={activeFilter === species ? '' : 'border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all'}
+            >
+              {speciesInfo[species].name}
+            </Button>
           ))}
         </motion.div>
 
-        {/* Featured Products Grid */}
+        {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProducts.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} />
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filteredProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </AnimatePresence>
         </div>
-
-        {/* View All Button */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-muted-foreground mb-4">
-            Browse our complete selection by fish type above
-          </p>
-        </motion.div>
       </div>
     </section>
   );
