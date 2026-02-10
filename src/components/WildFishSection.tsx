@@ -162,10 +162,10 @@ const WildFishSection = () => {
                 </div>
               </div>
 
-              <a href="tel:+17188331717" className="block">
+              <a href="tel:+16467509232" className="block">
                 <Button className="w-full" size="lg">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call (718) 833-1717
+                  Call +1 (646) 750-9232
                 </Button>
               </a>
             </motion.div>
