@@ -14,8 +14,8 @@ const rules = [
   },
   {
     icon: Phone,
-    title: 'Whole Fish — Call Us',
-    description: 'Whole fish pricing varies by size and availability. Call +1 (646) 750-9232 for current stock.',
+    title: 'Whole Fish & Special Orders',
+    description: 'Need a whole fish or a curated platter for a party? Call (718) 830-9070 for pricing and delivery.',
   },
 ];
 
