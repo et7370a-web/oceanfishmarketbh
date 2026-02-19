@@ -131,14 +131,13 @@ const WildFishSection = () => {
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-primary">
-                  Call for Pricing
+                  Whole Fish & Special Orders
                 </h3>
               </div>
 
               <p className="text-muted-foreground mb-6">
-                Wild fish availability and pricing change daily based on the catch.
-                Since we can't predict exactly what's in stock at any given time,
-                give us a call for the most up-to-date selection and pricing.
+                Need a whole fish or a curated platter for a party? Give us a call
+                for pricing and delivery options.
               </p>
 
               <div className="space-y-3 mb-6">
@@ -162,10 +161,10 @@ const WildFishSection = () => {
                 </div>
               </div>
 
-              <a href="tel:+16467509232" className="block">
+              <a href="tel:+17188309070" className="block">
                 <Button className="w-full" size="lg">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call +1 (646) 750-9232
+                  Call (718) 830-9070
                 </Button>
               </a>
             </motion.div>
