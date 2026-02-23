@@ -12,7 +12,7 @@ const isWholeFish = (type: string) => type.toLowerCase().includes('whole');
 
 const ProductDetail = () => {
   const { species, productId } = useParams<{ species: string; productId: string }>();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(5);
 
   const product = products.find((p) => p.id === Number(productId));
 
@@ -172,7 +172,7 @@ const ProductDetail = () => {
                       <span className="text-sm font-semibold text-foreground">Quantity (lbs):</span>
                       <div className="flex items-center border-2 border-border rounded-lg overflow-hidden">
                         <button
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                          onClick={() => setQuantity(Math.max(5, quantity - 1))}
                           className="p-2 sm:p-3 hover:bg-muted transition-colors active:bg-muted/80"
                           aria-label="Decrease quantity"
                         >
