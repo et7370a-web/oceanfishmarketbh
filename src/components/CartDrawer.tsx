@@ -5,11 +5,24 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from 'lucide-react';
 import { useCartStore } from '@/stores/cartStore';
 
+const isOrderingBlocked = () => {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun, 4=Thu, 6=Sat
+  const hour = now.getHours();
+  // Blocked: Thursday midnight (Fri 00:00) through Saturday 20:00
+  // day 5 = Friday (all day), day 6 = Saturday before 8pm
+  // Thursday midnight = Friday 00:00
+  if (day === 5) return true; // All Friday
+  if (day === 6 && hour < 20) return true; // Saturday before 8pm
+  return false;
+};
+
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
+  const orderBlocked = isOrderingBlocked();
 
   useEffect(() => { if (isOpen) syncCart(); }, [isOpen, syncCart]);
 
@@ -86,10 +99,13 @@ export const CartDrawer = () => {
                   <span className="text-lg font-semibold text-foreground">Total</span>
                   <span className="text-xl font-bold text-primary">${totalPrice.toFixed(2)}</span>
                 </div>
-                {totalItems < 5 && (
+                {orderBlocked && (
+                  <p className="text-sm text-destructive text-center font-medium">Orders are closed from Thursday midnight to Saturday 8:00 PM</p>
+                )}
+                {!orderBlocked && totalItems < 5 && (
                   <p className="text-sm text-destructive text-center">Minimum order: 5 items ({5 - totalItems} more needed)</p>
                 )}
-                <Button onClick={handleCheckout} className="w-full" size="lg" disabled={totalItems < 5 || isLoading || isSyncing}>
+                <Button onClick={handleCheckout} className="w-full" size="lg" disabled={orderBlocked || totalItems < 5 || isLoading || isSyncing}>
                   {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-4 h-4 mr-2" />Checkout with Shopify</>}
                 </Button>
               </div>
