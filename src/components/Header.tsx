@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingCart, Search, Fish } from 'lucide-react';
+import { Menu, X, Search, Fish } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CartDrawer } from '@/components/CartDrawer';
 
 const navLinks = [
   { name: 'Home', href: '#' },
@@ -72,24 +73,22 @@ const Header = () => {
               <Button variant="ghost" size="icon" className="hover:bg-ocean-surface/50">
                 <Search className="w-5 h-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-ocean-surface/50 relative">
-                <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
-                  3
-                </span>
-              </Button>
+              <CartDrawer />
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
                 Shop Now
               </Button>
             </motion.div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex items-center gap-2 lg:hidden">
+              <CartDrawer />
+              <button
+                className="p-2"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
