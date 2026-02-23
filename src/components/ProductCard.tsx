@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Star, ShoppingCart, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Product, getFlagImage, getCountryFlag } from '@/data/products';
+import { Button } from '@/components/ui/button';
+import { useCartStore } from '@/stores/cartStore';
+import { useQuery } from '@tanstack/react-query';
+import { fetchShopifyProducts } from '@/lib/shopify';
+import { toast } from 'sonner';
 
 interface ProductCardProps {
   product: Product;
@@ -9,6 +14,50 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, index }: ProductCardProps) => {
+  const addItem = useCartStore(state => state.addItem);
+  const isLoading = useCartStore(state => state.isLoading);
+
+  // Fetch matching Shopify product by title
+  const { data: shopifyProducts } = useQuery({
+    queryKey: ['shopify-products'],
+    queryFn: () => fetchShopifyProducts(50),
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const handleAddToCart = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Find the matching Shopify product
+    const shopifyProduct = shopifyProducts?.find(
+      (sp) => sp.node.title.toLowerCase() === product.name.toLowerCase()
+    );
+
+    if (!shopifyProduct) {
+      toast.error('Product not available for purchase yet');
+      return;
+    }
+
+    const variant = shopifyProduct.node.variants.edges[0]?.node;
+    if (!variant) {
+      toast.error('No variant available');
+      return;
+    }
+
+    await addItem({
+      product: shopifyProduct,
+      variantId: variant.id,
+      variantTitle: variant.title,
+      price: variant.price,
+      quantity: 1,
+      selectedOptions: variant.selectedOptions || [],
+    });
+
+    toast.success(`${product.name} added to cart`, {
+      position: 'top-center',
+    });
+  };
+
   return (
     <motion.div
       className="group relative"
@@ -71,8 +120,8 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
               </p>
             </div>
 
-            {/* Price */}
-            <div className="flex flex-col gap-1">
+            {/* Price & Add to Cart */}
+            <div className="flex items-end justify-between gap-2">
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold text-primary">
                   ${product.price.toFixed(2)}
@@ -81,6 +130,21 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
                   / lb
                 </span>
               </div>
+              <Button
+                size="sm"
+                onClick={handleAddToCart}
+                disabled={isLoading}
+                className="flex-shrink-0"
+              >
+                {isLoading ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <>
+                    <ShoppingCart className="w-4 h-4 mr-1" />
+                    Add
+                  </>
+                )}
+              </Button>
             </div>
           </div>
         </div>
