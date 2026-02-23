@@ -86,7 +86,10 @@ export const CartDrawer = () => {
                   <span className="text-lg font-semibold text-foreground">Total</span>
                   <span className="text-xl font-bold text-primary">${totalPrice.toFixed(2)}</span>
                 </div>
-                <Button onClick={handleCheckout} className="w-full" size="lg" disabled={items.length === 0 || isLoading || isSyncing}>
+                {totalItems < 5 && (
+                  <p className="text-sm text-destructive text-center">Minimum order: 5 items ({5 - totalItems} more needed)</p>
+                )}
+                <Button onClick={handleCheckout} className="w-full" size="lg" disabled={totalItems < 5 || isLoading || isSyncing}>
                   {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-4 h-4 mr-2" />Checkout with Shopify</>}
                 </Button>
               </div>
