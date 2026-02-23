@@ -53,9 +53,7 @@ const StorySection = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Ocean Fish Market was born from a simple belief: every family deserves access to
-                the freshest, highest-quality seafood — straight from the ocean to your table. What started
-                as a small storefront in Brooklyn has grown into one of New York's most trusted fish markets.
+                Founder Slavik's journey began with a rod and reel beside his grandfather, fly-fishing for rainbow trout near his childhood mountain home. Those early mornings instilled the values that define us today: patience, precision, and an unwavering commitment to quality.
               </motion.p>
 
               <motion.p
@@ -65,9 +63,7 @@ const StorySection = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                We work directly with fishermen and trusted suppliers around the world, hand-selecting
-                every catch for freshness and quality. From wild Alaskan salmon to Mediterranean branzino,
-                we bring the best of the sea to Brooklyn — and now, straight to your door with our online ordering.
+                After decades in the seafood industry, Slavik built a business rooted in the same principles — sourcing the finest wild-caught fish from trusted waters around the globe, and delivering it with the care it deserves. Today, our three retail locations and large-scale wholesale operation give us rare, hands-on control of the entire supply chain.
               </motion.p>
 
               <motion.div
