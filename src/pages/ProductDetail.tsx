@@ -150,10 +150,10 @@ const ProductDetail = () => {
                       Whole fish pricing varies by size and availability. Give us a call for
                       current stock and pricing.
                     </p>
-                    <a href="tel:+17188309070">
+                    <a href="tel:+16467509232">
                       <Button className="w-full" size="lg">
                         <Phone className="w-4 h-4 mr-2" />
-                        Call (718) 830-9070
+                        Call (646) 750-9232
                       </Button>
                     </a>
                   </div>

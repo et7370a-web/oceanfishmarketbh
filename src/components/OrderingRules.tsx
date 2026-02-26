@@ -15,7 +15,7 @@ const rules = [
   {
     icon: Phone,
     title: 'Whole Fish & Special Orders',
-    description: 'Need a whole fish or a curated platter for a party? Call (718) 830-9070 for pricing and delivery.',
+    description: 'Need a whole fish or a curated platter for a party? Call (646) 750-9232 for pricing and delivery.',
   },
 ];
 
