@@ -138,7 +138,7 @@ const ShippingInfo = () => {
 
               <div className="mt-6 p-4 bg-destructive/10 rounded-xl border border-destructive/20">
                 <p className="text-sm text-foreground">
-                  <strong className="text-destructive">Thursday evening – Saturday evening:</strong>
+                  <strong className="text-destructive">Friday 3:00 PM – Saturday 8:00 PM:</strong>
                   <br />
                   Store closed. Orders placed during this time will be delivered the following Monday.
                 </p>
