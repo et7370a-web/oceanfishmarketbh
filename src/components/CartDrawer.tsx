@@ -7,12 +7,10 @@ import { useCartStore } from '@/stores/cartStore';
 
 const isOrderingBlocked = () => {
   const now = new Date();
-  const day = now.getDay(); // 0=Sun, 4=Thu, 6=Sat
+  const day = now.getDay(); // 0=Sun, 5=Fri, 6=Sat
   const hour = now.getHours();
-  // Blocked: Thursday midnight (Fri 00:00) through Saturday 20:00
-  // day 5 = Friday (all day), day 6 = Saturday before 8pm
-  // Thursday midnight = Friday 00:00
-  if (day === 5) return true; // All Friday
+  // Blocked: Friday 3:00 PM through Saturday 8:00 PM
+  if (day === 5 && hour >= 15) return true; // Friday from 3pm
   if (day === 6 && hour < 20) return true; // Saturday before 8pm
   return false;
 };
@@ -100,7 +98,7 @@ export const CartDrawer = () => {
                   <span className="text-xl font-bold text-primary">${totalPrice.toFixed(2)}</span>
                 </div>
                 {orderBlocked && (
-                  <p className="text-sm text-destructive text-center font-medium">Orders are closed from Thursday midnight to Saturday 8:00 PM</p>
+                  <p className="text-sm text-destructive text-center font-medium">Orders are closed from Friday 3:00 PM to Saturday 8:00 PM</p>
                 )}
                 {!orderBlocked && totalItems < 5 && (
                   <p className="text-sm text-destructive text-center">Minimum order: 5 items ({5 - totalItems} more needed)</p>
