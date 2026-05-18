@@ -106,6 +106,17 @@ export const CartDrawer = () => {
                 <Button onClick={handleCheckout} className="w-full" size="lg" disabled={orderBlocked || totalItems < 5 || isLoading || isSyncing}>
                   {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-4 h-4 mr-2" />Checkout with Shopify</>}
                 </Button>
+                <div className="rounded-2xl border-2 border-secondary bg-secondary/10 p-4 text-center">
+                  <p className="text-xs uppercase tracking-widest text-secondary font-bold mb-2">Pay With</p>
+                  <p className="font-display text-2xl font-extrabold text-primary leading-tight">Zelle &amp; Venmo</p>
+                  <p className="text-3xl font-black text-foreground mt-2 tracking-tight">(646) 750-9232</p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Send payment to the number above and include your <strong className="text-foreground">order details</strong> in the note.
+                  </p>
+                  <p className="text-sm font-semibold text-secondary mt-2">
+                    Delivery within 24 hours of payment.
+                  </p>
+                </div>
               </div>
             </>
           )}
