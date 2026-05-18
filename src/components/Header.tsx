@@ -70,7 +70,7 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button variant="ghost" size="icon" className="hover:bg-ocean-surface/50">
+              <Button variant="ghost" size="icon" className="hover:bg-ocean-surface/50" aria-label="Search">
                 <Search className="w-5 h-5" />
               </Button>
               <CartDrawer />
@@ -85,6 +85,8 @@ const Header = () => {
               <button
                 className="p-2"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen}
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>

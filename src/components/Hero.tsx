@@ -12,6 +12,10 @@ const Hero = () => {
           src={heroImage}
           alt="Premium New York fish market"
           className="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/50 to-ocean-deep/90" />
       </div>
