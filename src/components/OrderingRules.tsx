@@ -59,6 +59,33 @@ const OrderingRules = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            className="mt-10 rounded-3xl border-2 border-secondary bg-gradient-to-br from-secondary/15 via-background to-primary/10 p-8 md:p-10 shadow-ocean text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm md:text-base uppercase tracking-[0.3em] text-secondary font-bold mb-3">
+              Payment
+            </p>
+            <h3 className="font-display text-4xl md:text-6xl font-extrabold text-primary mb-4 leading-none">
+              Zelle &amp; Venmo
+            </h3>
+            <a
+              href="tel:+16467509232"
+              className="block font-display text-5xl md:text-7xl font-black text-foreground tracking-tight mb-6 hover:text-secondary transition-colors"
+            >
+              (646) 750-9232
+            </a>
+            <p className="text-base md:text-lg text-foreground max-w-2xl mx-auto">
+              Send payment to the number above and include your <strong>order details</strong> in the payment note.
+            </p>
+            <p className="mt-4 inline-block bg-secondary text-secondary-foreground px-6 py-3 rounded-full font-bold text-base md:text-lg">
+              Once paid, we deliver within 24 hours
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
