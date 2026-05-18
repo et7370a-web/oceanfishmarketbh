@@ -122,7 +122,7 @@ const QualityPromise = () => {
                     <feature.icon className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
+                    <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
                     <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
                 </motion.div>

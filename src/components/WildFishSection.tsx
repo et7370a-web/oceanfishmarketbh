@@ -92,12 +92,14 @@ const WildFishSection = () => {
                 {/* Nav arrows */}
                 <button
                   onClick={prev}
+                  aria-label="Previous slide"
                   className="absolute left-3 top-1/2 -translate-y-1/2 bg-card/80 backdrop-blur-sm hover:bg-card rounded-full p-2 shadow-lg transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5 text-foreground" />
                 </button>
                 <button
                   onClick={next}
+                  aria-label="Next slide"
                   className="absolute right-3 top-1/2 -translate-y-1/2 bg-card/80 backdrop-blur-sm hover:bg-card rounded-full p-2 shadow-lg transition-colors"
                 >
                   <ChevronRight className="w-5 h-5 text-foreground" />
@@ -110,6 +112,8 @@ const WildFishSection = () => {
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                    aria-current={i === current}
                     className={`w-2.5 h-2.5 rounded-full transition-all ${
                       i === current ? 'bg-primary w-6' : 'bg-muted-foreground/30'
                     }`}

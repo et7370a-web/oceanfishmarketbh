@@ -137,10 +137,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-ocean-mid/30 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-ocean-surface/60 text-sm">
+            <p className="text-ocean-surface/80 text-sm">
               © 2024 Ocean Fish BH. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-ocean-surface/60">
+            <div className="flex gap-6 text-sm text-ocean-surface/80">
               <a href="#" className="hover:text-ocean-surface transition-colors">
                 Privacy Policy
               </a>
