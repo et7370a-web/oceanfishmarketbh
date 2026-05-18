@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Fish } from 'lucide-react';
 import Header from '@/components/Header';
@@ -42,8 +43,21 @@ const FishSpecies = () => {
   const info = speciesInfo[species];
   const speciesProducts = getProductsBySpecies(species);
 
+  const canonicalUrl = `https://oceanfishmarketbh.lovable.app/fish/${species}`;
+  const pageTitle = `${info.name} – Fresh Wild-Caught | Ocean Fish Market`;
+  const pageDesc = `${info.description.slice(0, 155)}`;
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

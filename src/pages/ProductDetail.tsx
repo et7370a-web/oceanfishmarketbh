@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Star, MapPin, Package, Phone, Plus, Minus } from 'lucide-react';
 import Header from '@/components/Header';
@@ -38,8 +39,21 @@ const ProductDetail = () => {
   const speciesProducts = getProductsBySpecies(species);
   const prepTypes = [...new Set(speciesProducts.map((p) => p.type))];
 
+  const canonicalUrl = `https://oceanfishmarketbh.lovable.app/fish/${species}/${product.id}`;
+  const pageTitle = `${product.name} – ${product.type} | Ocean Fish Market`;
+  const pageDesc = `${product.name} from ${product.origin}. ${product.type}. Fresh wild-caught ${speciesInfo[species].name.toLowerCase()} delivered to NYC, Long Island & NJ.`.slice(0, 158);
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="product" />
+      </Helmet>
       <Header />
       <main>
         {/* Breadcrumb */}
