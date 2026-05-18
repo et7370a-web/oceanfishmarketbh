@@ -78,11 +78,13 @@ const Newsletter = () => {
             >
               <div className="relative flex-1">
                 <Input
+                  id="newsletter-email"
                   type="email"
+                  aria-label="Email address"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="h-14 pl-5 pr-4 bg-ocean-surface/10 border-ocean-surface/30 text-ocean-surface placeholder:text-ocean-surface/50 focus:border-ocean-surface focus:ring-ocean-surface/30 rounded-xl"
+                  className="h-14 pl-5 pr-4 bg-ocean-surface/10 border-ocean-surface/30 text-ocean-surface placeholder:text-ocean-surface/70 focus:border-ocean-surface focus:ring-ocean-surface/30 rounded-xl"
                   required
                 />
               </div>
@@ -98,7 +100,7 @@ const Newsletter = () => {
           )}
 
           <motion.p
-            className="text-sm text-ocean-surface/60 mt-4"
+            className="text-sm text-ocean-surface/80 mt-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}

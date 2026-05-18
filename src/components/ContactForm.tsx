@@ -52,10 +52,11 @@ const ContactForm = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-2">
                       Name
                     </label>
                     <Input
+                      id="contact-name"
                       type="text"
                       placeholder="Your name"
                       value={formData.name}
@@ -64,10 +65,11 @@ const ContactForm = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-2">
                       Email *
                     </label>
                     <Input
+                      id="contact-email"
                       type="email"
                       placeholder="your@email.com"
                       value={formData.email}
@@ -79,10 +81,11 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="contact-phone" className="block text-sm font-medium text-foreground mb-2">
                     Phone Number
                   </label>
                   <Input
+                    id="contact-phone"
                     type="tel"
                     placeholder="(555) 123-4567"
                     value={formData.phone}
@@ -92,10 +95,11 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-foreground mb-2">
                     Message
                   </label>
                   <Textarea
+                    id="contact-message"
                     placeholder="How can we help you?"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
