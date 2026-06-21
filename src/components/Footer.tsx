@@ -7,7 +7,6 @@ const footerLinks = {
     { name: 'Salmon', href: '#' },
     { name: 'Tuna', href: '#' },
     { name: 'White Fish', href: '#' },
-    { name: 'Shellfish', href: '#' },
   ],
   company: [
     { name: 'Our Story', href: '#' },
