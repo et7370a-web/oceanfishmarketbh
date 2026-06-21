@@ -42,7 +42,7 @@ import carpSteaksImg from '@/assets/fish-carp-steaks.jpg';
 import carpHalfmoonImg from '@/assets/fish-carp-halfmoon.jpg';
 import carpWholeImg from '@/assets/fish-carp-whole.jpg';
 import doradoFilletImg from '@/assets/fish-dorado-fillet.jpg';
-import doradoWholeImg from '@/assets/fish-dorado-whole.jpg';
+import doradoWholeAsset from '@/assets/fish-dorado-whole.png.asset.json';
 import tilapiaFilletImg from '@/assets/fish-tilapia-fillet.jpg';
 import tilapiaWholeImg from '@/assets/fish-tilapia-whole.jpg';
 
@@ -144,7 +144,7 @@ export const products: Product[] = [
 
   // Dorado (Mahi-Mahi)
   { id: 40, name: 'Dorado Fillet', species: 'dorado', origin: 'USA', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: doradoFilletImg },
-  { id: 41, name: 'Dorado Whole', species: 'dorado', origin: 'USA', price: 18.99, weight: '5-8lb', type: 'Whole Fish Clean', rating: 5, image: doradoWholeImg },
+  { id: 41, name: 'Dorado Whole', species: 'dorado', origin: 'USA', price: 18.99, weight: '5-8lb', type: 'Whole Fish Clean', rating: 5, image: doradoWholeAsset.url },
 
   // Tilapia
   { id: 42, name: 'Tilapia Fillet', species: 'tilapia', origin: 'USA', price: 7.00, weight: '5lb', type: 'Fillet', rating: 5, image: tilapiaFilletImg },
@@ -282,7 +282,7 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     slug: 'dorado',
     name: 'Dorado',
     description: 'Wild-caught dorado, also known as mahi-mahi, from warm Atlantic waters. Prized for its firm, lean flesh and mild, slightly sweet flavor that grills beautifully.',
-    heroImage: doradoFilletImg,
+    heroImage: doradoWholeAsset.url,
   },
   tilapia: {
     slug: 'tilapia',
