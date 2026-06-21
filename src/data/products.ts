@@ -257,7 +257,7 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     slug: 'whiting',
     name: 'Whiting',
     description: 'Fresh Atlantic whiting with tender, flaky white flesh. An affordable, mild-flavored fish perfect for frying and casual preparations.',
-    heroImage: whitingWholeImg,
+    heroImage: whitingAsset.url,
   },
   mullet: {
     slug: 'mullet',
