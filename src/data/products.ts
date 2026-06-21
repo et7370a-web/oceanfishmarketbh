@@ -44,7 +44,7 @@ import carpWholeImg from '@/assets/fish-carp-whole.jpg';
 import doradoFilletImg from '@/assets/fish-dorado-fillet.jpg';
 import doradoWholeAsset from '@/assets/fish-dorado-whole.png.asset.json';
 import tilapiaFilletImg from '@/assets/fish-tilapia-fillet.jpg';
-import tilapiaWholeAsset from '@/assets/fish-tilapia-whole.webp.asset.json';
+import tilapiaWholeImg from '@/assets/fish-tilapia-whole.jpg';
 
 // Generic product imagery placeholders
 import genericFilletImg from '@/assets/fish-fillet.jpg';
