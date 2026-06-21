@@ -44,7 +44,7 @@ import carpWholeImg from '@/assets/fish-carp-whole.jpg';
 import doradoFilletImg from '@/assets/fish-dorado-fillet.jpg';
 import doradoWholeAsset from '@/assets/fish-dorado-whole.png.asset.json';
 import tilapiaFilletImg from '@/assets/fish-tilapia-fillet.jpg';
-import tilapiaWholeImg from '@/assets/fish-tilapia-whole.jpg';
+import tilapiaWholeAsset from '@/assets/fish-tilapia-whole.webp.asset.json';
 
 // Generic product imagery placeholders
 import genericFilletImg from '@/assets/fish-fillet.jpg';
@@ -148,7 +148,7 @@ export const products: Product[] = [
 
   // Tilapia
   { id: 42, name: 'Tilapia Fillet', species: 'tilapia', origin: 'USA', price: 7.00, weight: '5lb', type: 'Fillet', rating: 5, image: tilapiaFilletImg },
-  { id: 43, name: 'Tilapia Whole', species: 'tilapia', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeImg },
+  { id: 43, name: 'Tilapia Whole', species: 'tilapia', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeAsset.url },
 ];
 
 // Get flag image for origin
@@ -288,7 +288,7 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     slug: 'tilapia',
     name: 'Tilapia',
     description: 'Fresh farm-raised tilapia from clean U.S. waters. Known for its mild, flaky white flesh and versatility in everything from frying to baking.',
-    heroImage: tilapiaWholeImg,
+    heroImage: tilapiaWholeAsset.url,
   },
 };
 
