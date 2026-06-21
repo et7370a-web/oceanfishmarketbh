@@ -24,6 +24,7 @@ import flounderWholeImg from '@/assets/fish-flounder-whole.jpg';
 import tilefishImg from '@/assets/fish-tilefish.jpg';
 import tilefishWholeImg from '@/assets/fish-tilefish-whole.jpg';
 import whitingAsset from '@/assets/fish-whiting.jpg.asset.json';
+import whitingWholeAsset from '@/assets/fish-whiting-whole.png.asset.json';
 import whitingButterflyImg from '@/assets/fish-whiting-butterfly.jpg';
 import whitingHeadoffImg from '@/assets/fish-whiting-headoff.jpg';
 
@@ -122,7 +123,7 @@ export const products: Product[] = [
   // Whiting
   { id: 26, name: 'Whiting Butterfly Fillet', species: 'whiting', origin: 'USA', price: 14.99, weight: '5lb', type: 'Butterfly Fillet', rating: 5, image: whitingButterflyImg },
   { id: 27, name: 'Whiting Head Off', species: 'whiting', origin: 'USA', price: 12.99, weight: '5lb', type: 'Head Off Clean', rating: 5, image: whitingHeadoffImg },
-  { id: 28, name: 'Whiting Whole', species: 'whiting', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: whitingAsset.url },
+  { id: 28, name: 'Whiting Whole', species: 'whiting', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: whitingWholeAsset.url },
   
   // Mullet
   { id: 29, name: 'Mullet Fillet', species: 'mullet', origin: 'USA', price: 19.99, weight: '5lb', type: 'Fillet', rating: 5, image: mulletImg },
