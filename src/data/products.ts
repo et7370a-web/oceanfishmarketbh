@@ -26,7 +26,7 @@ import tilefishWholeImg from '@/assets/fish-tilefish-whole.jpg';
 import whitingAsset from '@/assets/fish-whiting.jpg.asset.json';
 import whitingButterflyImg from '@/assets/fish-whiting-butterfly.jpg';
 import whitingHeadoffImg from '@/assets/fish-whiting-headoff.jpg';
-import whitingWholeImg from '@/assets/fish-whiting-whole.jpg';
+
 import mulletImg from '@/assets/fish-mullet.jpg';
 import mulletSteaksImg from '@/assets/fish-mullet-steaks.jpg';
 import mulletWholeImg from '@/assets/fish-mullet-whole.jpg';
