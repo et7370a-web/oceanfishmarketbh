@@ -294,6 +294,12 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     description: 'Fresh farm-raised tilapia from clean U.S. waters. Known for its mild, flaky white flesh and versatility in everything from frying to baking.',
     heroImage: tilapiaWholeImg,
   },
+  'gray-sole': {
+    slug: 'gray-sole',
+    name: 'Gray Sole',
+    description: 'Delicate gray sole from Atlantic waters, prized for its thin, mild fillets and fine, flaky texture. A refined flatfish perfect for light sautéing and classic preparations.',
+    heroImage: graySoleAsset.url,
+  },
 };
 
 export const getProductsBySpecies = (species: string): Product[] => {
