@@ -24,6 +24,7 @@ import flounderWholeImg from '@/assets/fish-flounder-whole.jpg';
 import tilefishImg from '@/assets/fish-tilefish.jpg';
 import tilefishWholeImg from '@/assets/fish-tilefish-whole.jpg';
 import whitingAsset from '@/assets/fish-whiting.jpg.asset.json';
+import whitingWholeAsset from '@/assets/fish-whiting-whole.png.asset.json';
 import whitingButterflyImg from '@/assets/fish-whiting-butterfly.jpg';
 import whitingHeadoffImg from '@/assets/fish-whiting-headoff.jpg';
 
