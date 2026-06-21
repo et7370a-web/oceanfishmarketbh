@@ -45,6 +45,7 @@ import doradoFilletImg from '@/assets/fish-dorado-fillet.jpg';
 import doradoWholeAsset from '@/assets/fish-dorado-whole.png.asset.json';
 import tilapiaFilletImg from '@/assets/fish-tilapia-fillet.jpg';
 import tilapiaWholeImg from '@/assets/fish-tilapia-whole.jpg';
+import graySoleAsset from '@/assets/fish-gray-sole.jpg.asset.json';
 
 // Generic product imagery placeholders
 import genericFilletImg from '@/assets/fish-fillet.jpg';
