@@ -148,7 +148,7 @@ export const products: Product[] = [
 
   // Tilapia
   { id: 42, name: 'Tilapia Fillet', species: 'tilapia', origin: 'USA', price: 7.00, weight: '5lb', type: 'Fillet', rating: 5, image: tilapiaFilletImg },
-  { id: 43, name: 'Tilapia Whole', species: 'tilapia', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeAsset.url },
+  { id: 43, name: 'Tilapia Whole', species: 'tilapia', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeImg },
 ];
 
 // Get flag image for origin
