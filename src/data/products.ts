@@ -40,6 +40,10 @@ import carpFilletImg from '@/assets/fish-carp-fillet.jpg';
 import carpSteaksImg from '@/assets/fish-carp-steaks.jpg';
 import carpHalfmoonImg from '@/assets/fish-carp-halfmoon.jpg';
 import carpWholeImg from '@/assets/fish-carp-whole.jpg';
+import doradoFilletImg from '@/assets/fish-dorado-fillet.jpg';
+import doradoWholeImg from '@/assets/fish-dorado-whole.jpg';
+import tilapiaFilletImg from '@/assets/fish-tilapia-fillet.jpg';
+import tilapiaWholeImg from '@/assets/fish-tilapia-whole.jpg';
 
 // Generic product imagery placeholders
 import genericFilletImg from '@/assets/fish-fillet.jpg';
@@ -138,12 +142,12 @@ export const products: Product[] = [
   { id: 39, name: 'Carp Whole', species: 'carp', origin: 'Mississippi River', price: 9.99, weight: '10-12lb', type: 'Whole Fish Clean', rating: 5, image: carpWholeImg },
 
   // Dorado (Mahi-Mahi)
-  { id: 40, name: 'Dorado Fillet', species: 'dorado', origin: 'USA', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: genericFilletImg },
-  { id: 41, name: 'Dorado Whole', species: 'dorado', origin: 'USA', price: 18.99, weight: '5-8lb', type: 'Whole Fish Clean', rating: 5, image: genericWholeImg },
+  { id: 40, name: 'Dorado Fillet', species: 'dorado', origin: 'USA', price: 27.99, weight: '5lb', type: 'Fillet', rating: 5, image: doradoFilletImg },
+  { id: 41, name: 'Dorado Whole', species: 'dorado', origin: 'USA', price: 18.99, weight: '5-8lb', type: 'Whole Fish Clean', rating: 5, image: doradoWholeImg },
 
   // Tilapia
-  { id: 42, name: 'Tilapia Fillet', species: 'tilapia', origin: 'USA', price: 7.00, weight: '5lb', type: 'Fillet', rating: 5, image: genericFilletImg },
-  { id: 43, name: 'Tilapia Whole', species: 'tilapia', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: genericWholeImg },
+  { id: 42, name: 'Tilapia Fillet', species: 'tilapia', origin: 'USA', price: 7.00, weight: '5lb', type: 'Fillet', rating: 5, image: tilapiaFilletImg },
+  { id: 43, name: 'Tilapia Whole', species: 'tilapia', origin: 'USA', price: 9.99, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeImg },
 ];
 
 // Get flag image for origin
@@ -277,13 +281,13 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     slug: 'dorado',
     name: 'Dorado',
     description: 'Wild-caught dorado, also known as mahi-mahi, from warm Atlantic waters. Prized for its firm, lean flesh and mild, slightly sweet flavor that grills beautifully.',
-    heroImage: genericFilletImg,
+    heroImage: doradoFilletImg,
   },
   tilapia: {
     slug: 'tilapia',
     name: 'Tilapia',
     description: 'Fresh farm-raised tilapia from clean U.S. waters. Known for its mild, flaky white flesh and versatility in everything from frying to baking.',
-    heroImage: genericWholeImg,
+    heroImage: tilapiaWholeImg,
   },
 };
 
