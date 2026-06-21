@@ -288,7 +288,7 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     slug: 'tilapia',
     name: 'Tilapia',
     description: 'Fresh farm-raised tilapia from clean U.S. waters. Known for its mild, flaky white flesh and versatility in everything from frying to baking.',
-    heroImage: tilapiaWholeAsset.url,
+    heroImage: tilapiaWholeImg,
   },
 };
 
