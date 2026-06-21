@@ -40,6 +40,10 @@ import carpFilletImg from '@/assets/fish-carp-fillet.jpg';
 import carpSteaksImg from '@/assets/fish-carp-steaks.jpg';
 import carpHalfmoonImg from '@/assets/fish-carp-halfmoon.jpg';
 import carpWholeImg from '@/assets/fish-carp-whole.jpg';
+import doradoFilletImg from '@/assets/fish-dorado-fillet.jpg';
+import doradoWholeImg from '@/assets/fish-dorado-whole.jpg';
+import tilapiaFilletImg from '@/assets/fish-tilapia-fillet.jpg';
+import tilapiaWholeImg from '@/assets/fish-tilapia-whole.jpg';
 
 // Generic product imagery placeholders
 import genericFilletImg from '@/assets/fish-fillet.jpg';
