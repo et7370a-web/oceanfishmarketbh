@@ -15,4 +15,6 @@
   <url><loc>https://oceanfishmarketbh.lovable.app/fish/mullet</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oceanfishmarketbh.lovable.app/fish/buffalo</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oceanfishmarketbh.lovable.app/fish/carp</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oceanfishmarketbh.lovable.app/fish/dorado</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oceanfishmarketbh.lovable.app/fish/tilapia</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
