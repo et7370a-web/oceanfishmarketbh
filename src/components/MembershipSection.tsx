@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 
 const perks = [
   { icon: Truck, text: 'Free shipping on every order' },
-  { icon: Tags, text: 'Wholesale pricing on whole fish' },
+  { icon: Tags, text: '$9.99/lb on whole fish (5 lb minimum)' },
   { icon: Crown, text: 'Members-only deals and early access' },
 ];
 
