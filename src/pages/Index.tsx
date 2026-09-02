@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import OrderingRules from '@/components/OrderingRules';
 import WildFishSection from '@/components/WildFishSection';
 import FeaturedProducts from '@/components/FeaturedProducts';
+import MembershipSection from '@/components/MembershipSection';
 import QualityPromise from '@/components/QualityPromise';
 import StorySection from '@/components/StorySection';
 import ShippingInfo from '@/components/ShippingInfo';
@@ -28,6 +29,7 @@ const Index = () => {
         <OrderingRules />
         <WildFishSection />
         <FeaturedProducts />
+        <MembershipSection />
         <QualityPromise />
         <StorySection />
         <ShippingInfo />
