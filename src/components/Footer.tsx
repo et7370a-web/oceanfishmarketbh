@@ -137,7 +137,10 @@ const Footer = () => {
         <div className="border-t border-ocean-mid/30 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-ocean-surface/80 text-sm">
-              © 2024 Ocean Fish BH. All rights reserved.
+              © 2024 Ocean Fish BH. All rights reserved. Call us at{' '}
+              <a href="tel:+16467509232" className="underline hover:text-gold-light transition-colors">
+                (646) 750-9232
+              </a>
             </p>
             <div className="flex gap-6 text-sm text-ocean-surface/80">
               <a href="#" className="hover:text-ocean-surface transition-colors">
