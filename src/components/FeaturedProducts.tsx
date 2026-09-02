@@ -36,7 +36,7 @@ const FeaturedProducts = () => {
             Hand-selected whole fish, cleaned and ready for your table. Every fish is 
             $9.99 per pound with a 5 lb minimum order.
           </motion.p>
-        </motion.div>
+        </div>
 
         {/* All whole fish products on one page */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
