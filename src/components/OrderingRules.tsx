@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Scale, ShoppingBag, Phone, Info } from 'lucide-react';
+import { Scale, ShoppingBag, Info } from 'lucide-react';
 
 const rules = [
   {
@@ -11,11 +11,6 @@ const rules = [
     icon: ShoppingBag,
     title: '5 lb Minimum Order',
     description: 'Your total order must be at least 5 lbs. Mix and match any combination of fish.',
-  },
-  {
-    icon: Phone,
-    title: 'Whole Fish & Special Orders',
-    description: 'Need a whole fish or a curated platter for a party? Call (646) 750-9232 for pricing and delivery.',
   },
 ];
 
@@ -37,7 +32,7 @@ const OrderingRules = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {rules.map((rule, index) => (
               <motion.div
                 key={rule.title}
