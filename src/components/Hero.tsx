@@ -72,7 +72,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Premium wild-caught seafood sourced daily from trusted fisheries.
-            Expert filleting. Next-day delivery to your door across NYC, Long Island & NJ.
+            Next-day delivery to your door across NYC, Long Island & NJ.
           </motion.p>
 
           {/* CTA Buttons */}
