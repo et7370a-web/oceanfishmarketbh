@@ -68,10 +68,10 @@ const OrderingRules = () => {
             viewport={{ once: true }}
           >
             <p className="text-sm md:text-base uppercase tracking-[0.3em] text-secondary font-bold mb-3">
-              Payment
+              Membership
             </p>
             <h3 className="font-display text-4xl md:text-6xl font-extrabold text-primary mb-4 leading-none">
-              Zelle &amp; Venmo
+              $3/mo or $36/yr
             </h3>
             <a
               href="tel:+16467509232"
@@ -80,10 +80,10 @@ const OrderingRules = () => {
               (646) 750-9232
             </a>
             <p className="text-base md:text-lg text-foreground max-w-2xl mx-auto">
-              Send payment to the number above and include your <strong>order details</strong> in the payment note.
+              Call for special requests, or join to unlock <strong>free shipping</strong> and <strong>$9.99/lb wholesale pricing</strong> on whole fish.
             </p>
             <p className="mt-4 inline-block bg-secondary text-secondary-foreground px-6 py-3 rounded-full font-bold text-base md:text-lg">
-              Once paid, we deliver within 24 hours
+              Cancel anytime
             </p>
           </motion.div>
         </div>
