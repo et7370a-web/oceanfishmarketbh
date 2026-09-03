@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ocean Fish Market – Fresh Wild-Caught Seafood | Brooklyn, NY</title>
@@ -55,7 +64,7 @@
       }
     }
     </script>
-    <script type="module" crossorigin src="/oceanfishmarketbh/assets/index-Bv5hLWBv.js"></script>
+    <script type="module" crossorigin src="/oceanfishmarketbh/assets/index-BeRybud4.js"></script>
     <link rel="stylesheet" crossorigin href="/oceanfishmarketbh/assets/index-8SxCf1wO.css">
   </head>
 

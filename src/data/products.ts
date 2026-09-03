@@ -40,14 +40,14 @@ export interface Product {
 const WHOLE_PRICE = 9.99;
 
 export const products: Product[] = [
-  { id: 1, name: 'Whole Salmon', species: 'salmon', origin: 'Alaska', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: salmonWholeAsset },
-  { id: 2, name: 'Whole Tuna', species: 'tuna', origin: 'Pacific Ocean', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: tunaWholeAsset },
-  { id: 3, name: 'Whole Branzino', species: 'branzino', origin: 'Greece', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoWholeAsset },
-  { id: 4, name: 'Whole Red Snapper', species: 'snapper', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: redSnapperWholeAsset },
-  { id: 5, name: 'Whole Grouper', species: 'grouper', origin: 'USA', price: WHOLE_PRICE, weight: '5-8lb', type: 'Whole Fish', rating: 5, image: grouperWholeAsset },
-  { id: 6, name: 'Whole Cod', species: 'cod', origin: 'Alaska', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: codWholeAsset },
-  { id: 7, name: 'Whole Halibut', species: 'halibut', origin: 'Arctic Ocean', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: halibutWholeAsset },
-  { id: 8, name: 'Whole Flounder', species: 'flounder', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: flounderWholeAsset },
+  { id: 1, name: 'Salmon', species: 'salmon', origin: 'Alaska', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: salmonWholeAsset },
+  { id: 2, name: 'Tuna', species: 'tuna', origin: 'Pacific Ocean', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: tunaWholeAsset },
+  { id: 3, name: 'Branzino', species: 'branzino', origin: 'Greece', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoWholeAsset },
+  { id: 4, name: 'Red Snapper', species: 'snapper', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: redSnapperWholeAsset },
+  { id: 5, name: 'Grouper', species: 'grouper', origin: 'USA', price: WHOLE_PRICE, weight: '5-8lb', type: 'Whole Fish', rating: 5, image: grouperWholeAsset },
+  { id: 6, name: 'Cod', species: 'cod', origin: 'Alaska', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: codWholeAsset },
+  { id: 7, name: 'Halibut', species: 'halibut', origin: 'Arctic Ocean', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: halibutWholeAsset },
+  { id: 8, name: 'Flounder', species: 'flounder', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: flounderWholeAsset },
   { id: 9, name: 'Tile Fish', species: 'tilefish', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: tileFishWholeAsset },
   { id: 10, name: 'Whiting', species: 'whiting', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: whitingWholeAsset },
   { id: 11, name: 'Mullet', species: 'mullet', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: mulletWholeAsset },
