@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oceanfishmarketbh.lovable.app/sitemap.xml
