@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import OrderingRules from '@/components/OrderingRules';
-import WildFishSection from '@/components/WildFishSection';
 import FeaturedProducts from '@/components/FeaturedProducts';
 import MembershipSection from '@/components/MembershipSection';
 import QualityPromise from '@/components/QualityPromise';
@@ -27,7 +26,6 @@ const Index = () => {
       <main>
         <Hero />
         <OrderingRules />
-        <WildFishSection />
         <FeaturedProducts />
         <MembershipSection />
         <QualityPromise />
