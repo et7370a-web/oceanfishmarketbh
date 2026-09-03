@@ -14,6 +14,7 @@ import carpWholeAsset from '@/assets/fish-whole-carp-real.jpg';
 import doradoWholeAsset from '@/assets/fish-whole-dorado-real.jpg';
 import tilapiaWholeAsset from '@/assets/fish-whole-tilapia-real.jpg';
 import graySoleWholeAsset from '@/assets/fish-whole-gray-sole-real.jpg';
+import blackSeabassWholeAsset from '@/assets/fish-whole-black-seabass-real.jpg';
 
 // Flag images
 import usaFlagImg from '@/assets/flag-usa.png';
@@ -54,6 +55,7 @@ export const products: Product[] = [
   { id: 14, name: 'Dorado', species: 'dorado', origin: 'USA', price: WHOLE_PRICE, weight: '5-8lb', type: 'Whole Fish Clean', rating: 5, image: doradoWholeAsset },
   { id: 15, name: 'Tilapia', species: 'tilapia', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeAsset },
   { id: 16, name: 'Gray Sole', species: 'gray-sole', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: graySoleWholeAsset },
+  { id: 17, name: 'Black Seabass', species: 'black-seabass', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: blackSeabassWholeAsset },
 ];
 
 // Get flag image for origin
@@ -186,6 +188,12 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     name: 'Gray Sole',
     description: 'Delicate gray sole from Atlantic waters, prized for its thin, mild fillets and fine, flaky texture. A refined flatfish perfect for light sautéing and classic preparations.',
     heroImage: graySoleWholeAsset,
+  },
+  'black-seabass': {
+    slug: 'black-seabass',
+    name: 'Black Seabass',
+    description: 'Wild-caught black seabass from Atlantic waters. Prized for its firm, sweet, delicately flavored flesh, perfect for whole roasting or steaming.',
+    heroImage: blackSeabassWholeAsset,
   },
 };
 
