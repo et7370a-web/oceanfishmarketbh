@@ -15,6 +15,7 @@ import doradoWholeAsset from '@/assets/fish-whole-dorado-real.jpg';
 import tilapiaWholeAsset from '@/assets/fish-whole-tilapia-real.jpg';
 import graySoleWholeAsset from '@/assets/fish-whole-gray-sole-real.jpg';
 import blackSeabassWholeAsset from '@/assets/fish-whole-black-seabass-real.jpg';
+import stripedBassWholeAsset from '@/assets/fish-whole-striped-bass-real.jpg';
 
 // Flag images
 import usaFlagImg from '@/assets/flag-usa.png';
@@ -56,6 +57,7 @@ export const products: Product[] = [
   { id: 15, name: 'Tilapia', species: 'tilapia', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: tilapiaWholeAsset },
   { id: 16, name: 'Gray Sole', species: 'gray-sole', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: graySoleWholeAsset },
   { id: 17, name: 'Black Seabass', species: 'black-seabass', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: blackSeabassWholeAsset },
+  { id: 18, name: 'Striped Bass', species: 'striped-bass', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: stripedBassWholeAsset },
 ];
 
 // Get flag image for origin
@@ -194,6 +196,12 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
     name: 'Black Seabass',
     description: 'Wild-caught black seabass from Atlantic waters. Prized for its firm, sweet, delicately flavored flesh, perfect for whole roasting or steaming.',
     heroImage: blackSeabassWholeAsset,
+  },
+  'striped-bass': {
+    slug: 'striped-bass',
+    name: 'Striped Bass',
+    description: 'Wild-caught striped bass from Atlantic coastal waters. Known for its firm, moist white flesh and mild, clean flavor — a favorite for whole grilling and roasting.',
+    heroImage: stripedBassWholeAsset,
   },
 };
 
