@@ -17,12 +17,6 @@ import graySoleWholeAsset from '@/assets/fish-whole-gray-sole-real.jpg';
 import blackSeabassWholeAsset from '@/assets/fish-whole-black-seabass-real.jpg';
 import stripedBassWholeAsset from '@/assets/fish-whole-striped-bass-real.jpg';
 
-// Flag images
-import usaFlagImg from '@/assets/flag-usa.png';
-import japanFlagImg from '@/assets/flag-japan.png';
-import canadaFlagImg from '@/assets/flag-canada.png';
-import greeceFlagImg from '@/assets/flag-greece.png';
-
 export interface Product {
   id: number;
   name: string;
@@ -40,7 +34,6 @@ export interface Product {
 const WHOLE_PRICE = 9.99;
 
 export const products: Product[] = [
-  { id: 1, name: 'Salmon', species: 'salmon', origin: 'Alaska', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: salmonWholeAsset },
   { id: 2, name: 'Tuna', species: 'tuna', origin: 'Pacific Ocean', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: tunaWholeAsset },
   { id: 3, name: 'Branzino', species: 'branzino', origin: 'Greece', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: branzinoWholeAsset },
   { id: 4, name: 'Red Snapper', species: 'snapper', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: redSnapperWholeAsset },
@@ -62,34 +55,6 @@ export const products: Product[] = [
   { id: 20, name: 'Faroe Island Salmon', species: 'salmon', origin: 'Faroe Islands', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: salmonWholeAsset },
 ];
 
-// Get flag image for origin
-export const getFlagImage = (origin: string): string | null => {
-  const flagMap: Record<string, string> = {
-    'Alaska': usaFlagImg,
-    'USA': usaFlagImg,
-    'Mississippi River': usaFlagImg,
-    'Pacific Ocean': japanFlagImg,
-    'Arctic Ocean': canadaFlagImg,
-    'Greece': greeceFlagImg,
-  };
-  return flagMap[origin] || null;
-};
-
-// Country flag emoji for text display
-export const getCountryFlag = (origin: string): string => {
-  const flagMap: Record<string, string> = {
-    'Alaska': '🇺🇸',
-    'USA': '🇺🇸',
-    'Mississippi River': '🇺🇸',
-    'Pacific Ocean': '🇯🇵',
-    'Arctic Ocean': '🇨🇦',
-    'Greece': '🇬🇷',
-    'Scotland': '🇬🇧',
-    'Faroe Islands': '🇫🇴',
-  };
-  return flagMap[origin] || '🌍';
-};
-
 // Species info for pages
 export interface SpeciesInfo {
   slug: string;
@@ -102,7 +67,7 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
   salmon: {
     slug: 'salmon',
     name: 'Salmon',
-    description: 'Wild-caught salmon sourced from Alaska, Scotland, and the Faroe Islands. Known for its rich, buttery flavor and beautiful pink-orange flesh.',
+    description: 'Wild-caught salmon sourced from Scotland and the Faroe Islands. Known for its rich, buttery flavor and beautiful pink-orange flesh.',
     heroImage: salmonWholeAsset,
   },
   tuna: {

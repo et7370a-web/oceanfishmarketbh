@@ -6,7 +6,7 @@ import { ArrowLeft, Star, MapPin, Package, Phone, Plus, Minus } from 'lucide-rea
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { products, speciesInfo, getProductsBySpecies, getFlagImage, getCountryFlag } from '@/data/products';
+import { products, speciesInfo, getProductsBySpecies } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 
 const isWholeFish = (type: string) => type.toLowerCase().includes('whole');
@@ -87,13 +87,6 @@ const ProductDetail = () => {
                   {product.badge}
                 </span>
               )}
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-card/90 backdrop-blur-sm rounded-md px-2 sm:px-3 py-1 sm:py-1.5 shadow-lg">
-                {getFlagImage(product.origin) ? (
-                  <img src={getFlagImage(product.origin)!} alt={product.origin} className="w-8 sm:w-10 h-5 sm:h-7 object-contain" />
-                ) : (
-                  <span className="text-xl sm:text-2xl">{getCountryFlag(product.origin)}</span>
-                )}
-              </div>
             </motion.div>
 
             {/* Info */}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, ShoppingCart, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Product, getFlagImage, getCountryFlag } from '@/data/products';
+import { Product } from '@/data/products';
 import { CUT_STYLES, DEFAULT_CUT_STYLE, getCutStyleLabel } from '@/data/cutStyles';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -87,19 +87,6 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
                 {product.badge}
               </span>
             )}
-
-            {/* Country Flag */}
-            <div className="absolute bottom-3 right-3 bg-card/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-lg">
-              {getFlagImage(product.origin) ? (
-                <img 
-                  src={getFlagImage(product.origin)!} 
-                  alt={product.origin} 
-                  className="w-8 h-6 object-contain"
-                />
-              ) : (
-                <span className="text-xl">{getCountryFlag(product.origin)}</span>
-              )}
-            </div>
           </div>
 
           {/* Content */}
@@ -119,7 +106,6 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
               {product.name}
             </h3>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-lg">{getCountryFlag(product.origin)}</span>
               <p className="text-sm text-muted-foreground">
                 {product.origin}
               </p>
