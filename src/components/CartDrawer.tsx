@@ -63,33 +63,38 @@ export const CartDrawer = () => {
             <>
               <div className="flex-1 overflow-y-auto pr-2 min-h-0">
                 <div className="space-y-4">
-                  {items.map((item) => (
-                    <div key={item.variantId} className="flex gap-4 p-3 bg-muted/30 rounded-xl">
-                      <div className="w-16 h-16 bg-muted rounded-lg overflow-hidden flex-shrink-0">
-                        {item.product.node.images?.edges?.[0]?.node && (
-                          <img src={item.product.node.images.edges[0].node.url} alt={item.product.node.title} className="w-full h-full object-cover" />
-                        )}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-medium text-sm truncate text-foreground">{item.product.node.title}</h4>
-                        <p className="text-sm font-semibold text-primary">${parseFloat(item.price.amount).toFixed(2)} / lb</p>
-                      </div>
-                      <div className="flex flex-col items-end gap-2 flex-shrink-0">
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => removeItem(item.variantId)} aria-label={`Remove ${item.product.node.title}`}>
-                          <Trash2 className="h-3 w-3" />
-                        </Button>
-                        <div className="flex items-center gap-1">
-                          <Button variant="outline" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.variantId, item.quantity - 1)} aria-label="Decrease quantity">
-                            <Minus className="h-3 w-3" />
+                  {items.map((item, i) => {
+                    const cutStyle = item.customAttributes?.find((a) => a.key === 'Cut Style')?.value;
+                    const key = item.lineId ?? `${item.variantId}-${i}`;
+                    return (
+                      <div key={key} className="flex gap-4 p-3 bg-muted/30 rounded-xl">
+                        <div className="w-16 h-16 bg-muted rounded-lg overflow-hidden flex-shrink-0">
+                          {item.product.node.images?.edges?.[0]?.node && (
+                            <img src={item.product.node.images.edges[0].node.url} alt={item.product.node.title} className="w-full h-full object-cover" />
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-sm truncate text-foreground">{item.product.node.title}</h4>
+                          {cutStyle && <p className="text-xs text-muted-foreground truncate">{cutStyle}</p>}
+                          <p className="text-sm font-semibold text-primary">${parseFloat(item.price.amount).toFixed(2)} / lb</p>
+                        </div>
+                        <div className="flex flex-col items-end gap-2 flex-shrink-0">
+                          <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => item.lineId && removeItem(item.lineId)} aria-label={`Remove ${item.product.node.title}`}>
+                            <Trash2 className="h-3 w-3" />
                           </Button>
-                          <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
-                          <Button variant="outline" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.variantId, item.quantity + 1)} aria-label="Increase quantity">
-                            <Plus className="h-3 w-3" />
-                          </Button>
+                          <div className="flex items-center gap-1">
+                            <Button variant="outline" size="icon" className="h-6 w-6" onClick={() => item.lineId && updateQuantity(item.lineId, item.quantity - 1)} aria-label="Decrease quantity">
+                              <Minus className="h-3 w-3" />
+                            </Button>
+                            <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
+                            <Button variant="outline" size="icon" className="h-6 w-6" onClick={() => item.lineId && updateQuantity(item.lineId, item.quantity + 1)} aria-label="Increase quantity">
+                              <Plus className="h-3 w-3" />
+                            </Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-background">

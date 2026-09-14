@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, ShoppingCart, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Product, getFlagImage, getCountryFlag } from '@/data/products';
+import { CUT_STYLES, DEFAULT_CUT_STYLE, getCutStyleLabel } from '@/data/cutStyles';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useCartStore } from '@/stores/cartStore';
 import { useQuery } from '@tanstack/react-query';
 import { fetchShopifyProducts } from '@/lib/shopify';
@@ -16,6 +19,7 @@ interface ProductCardProps {
 const ProductCard = ({ product, index }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
   const isLoading = useCartStore(state => state.isLoading);
+  const [cutStyle, setCutStyle] = useState(DEFAULT_CUT_STYLE);
 
   // Fetch matching Shopify product by title
   const { data: shopifyProducts } = useQuery({
@@ -51,9 +55,10 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
       price: variant.price,
       quantity: 1,
       selectedOptions: variant.selectedOptions || [],
+      customAttributes: [{ key: 'Cut Style', value: getCutStyleLabel(cutStyle) }],
     });
 
-    toast.success(`${product.name} added to cart`, {
+    toast.success(`${product.name} (${getCutStyleLabel(cutStyle)}) added to cart`, {
       position: 'top-center',
     });
   };
@@ -118,6 +123,28 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
               <p className="text-sm text-muted-foreground">
                 {product.origin}
               </p>
+            </div>
+
+            {/* Cut Style */}
+            <div
+              className="mb-3"
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+            >
+              <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1 block">
+                Cut Style
+              </label>
+              <Select value={cutStyle} onValueChange={setCutStyle}>
+                <SelectTrigger className="h-9 text-sm">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {CUT_STYLES.map((style) => (
+                    <SelectItem key={style.value} value={style.value}>
+                      {style.label} — {style.description}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Price & Add to Cart */}
