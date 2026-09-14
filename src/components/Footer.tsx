@@ -47,10 +47,10 @@ const Footer = () => {
               <Fish className="w-10 h-10 text-gold-light" />
               <div className="flex flex-col">
               <span className="font-display text-2xl font-bold text-ocean-surface tracking-tight">
-                  OCEAN
+                  OCEAN KING
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.3em] text-ocean-surface/60 -mt-1">
-                  Fish BH
+                  Fishmarket
                 </span>
               </div>
             </motion.a>
@@ -137,7 +137,7 @@ const Footer = () => {
         <div className="border-t border-ocean-mid/30 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-ocean-surface/80 text-sm">
-              © 2024 Ocean Fish BH. All rights reserved. Call us at{' '}
+              © 2024 Ocean King Fishmarket. All rights reserved. Call us at{' '}
               <a href="tel:+16467509232" className="underline hover:text-gold-light transition-colors">
                 (646) 750-9232
               </a>

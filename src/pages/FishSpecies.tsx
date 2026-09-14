@@ -44,7 +44,7 @@ const FishSpecies = () => {
   const speciesProducts = getProductsBySpecies(species);
 
   const canonicalUrl = `https://oceanfishmarketbh.lovable.app/fish/${species}`;
-  const pageTitle = `${info.name} – Fresh Wild-Caught | Ocean Fish Market`;
+  const pageTitle = `${info.name} – Fresh Wild-Caught | Ocean King Fishmarket`;
   const pageDesc = `${info.description.slice(0, 155)}`;
 
   return (

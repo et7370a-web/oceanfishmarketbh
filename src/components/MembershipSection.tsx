@@ -61,7 +61,7 @@ const MembershipSection = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Ocean Fish Market Membership
+              Ocean King Fishmarket Membership
             </motion.span>
             <motion.h2
               className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6"

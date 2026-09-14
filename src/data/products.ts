@@ -58,6 +58,8 @@ export const products: Product[] = [
   { id: 16, name: 'Gray Sole', species: 'gray-sole', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: graySoleWholeAsset },
   { id: 17, name: 'Black Seabass', species: 'black-seabass', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: blackSeabassWholeAsset },
   { id: 18, name: 'Striped Bass', species: 'striped-bass', origin: 'USA', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: stripedBassWholeAsset },
+  { id: 19, name: 'Scottish Salmon', species: 'salmon', origin: 'Scotland', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: salmonWholeAsset },
+  { id: 20, name: 'Faroe Island Salmon', species: 'salmon', origin: 'Faroe Islands', price: WHOLE_PRICE, weight: '5lb', type: 'Whole Fish', rating: 5, image: salmonWholeAsset },
 ];
 
 // Get flag image for origin
@@ -82,6 +84,8 @@ export const getCountryFlag = (origin: string): string => {
     'Pacific Ocean': '🇯🇵',
     'Arctic Ocean': '🇨🇦',
     'Greece': '🇬🇷',
+    'Scotland': '🇬🇧',
+    'Faroe Islands': '🇫🇴',
   };
   return flagMap[origin] || '🌍';
 };
@@ -98,7 +102,7 @@ export const speciesInfo: Record<string, SpeciesInfo> = {
   salmon: {
     slug: 'salmon',
     name: 'Salmon',
-    description: 'Wild-caught salmon from the pristine waters of Alaska. Known for its rich, buttery flavor and beautiful pink-orange flesh.',
+    description: 'Wild-caught salmon sourced from Alaska, Scotland, and the Faroe Islands. Known for its rich, buttery flavor and beautiful pink-orange flesh.',
     heroImage: salmonWholeAsset,
   },
   tuna: {
